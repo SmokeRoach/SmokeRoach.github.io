@@ -1,0 +1,21 @@
+{
+  "_help": "Main settings for the hub. Edit and push; no build step needed.",
+  "chat": {
+    "_help": "THE ONE PLACE TO CONFIGURE THE CHAT ROOM. provider = klaklak | chatango | minnit | widgetbot | tlkio | none",
+    "provider": "klaklak",
+    "klaklak": { "room": "smokeroach-hub-0151", "theme": "dark" },
+    "chatango": { "handle": "" },
+    "minnit": { "url": "" },
+    "widgetbot": { "server": "", "channel": "" },
+    "tlkio": { "channel": "smokeroach-hub-0151", "theme": "night" }
+  },
+  "goal": {
+    "_help": "Road to monetisation tracker. Update the numbers whenever you like.",
+    "label": "Road to monetisation",
+    "watchHours": 2328,
+    "watchHoursTarget": 4000,
+    "subscribers": 495,
+    "subscribersTarget": 1000,
+    "asOf": "2026-10-22"
+  }
+}

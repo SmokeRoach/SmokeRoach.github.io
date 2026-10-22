@@ -1,0 +1,43 @@
+{
+  "_help": "Cards for 'What we're promoting / Gear & links'. To switch a card to an affiliate link later: put the new URL in 'url' and set 'affiliate': true (the card then shows an 'Affiliate link' badge, which UK ASA/CMA rules require).",
+  "note": "No affiliate or sponsored links yet: everything here is just stuff we use and like. Affiliate links coming soon, and they'll always be clearly labelled.",
+  "gear": [
+    {
+      "name": "DJI Mic Mini 2",
+      "blurb": "The little wireless mic that finally fixed our sound. Two mics for about £90.",
+      "image": "",
+      "emoji": "🎙️",
+      "url": "https://www.dji.com/mic-mini-2",
+      "cta": "See it on DJI",
+      "video": "https://youtu.be/HQyX3ktv7bs",
+      "videoText": "Watch our unboxing",
+      "affiliate": false
+    },
+    {
+      "name": "DJI Osmo Pocket",
+      "blurb": "The pocket camera we film most of our travel vlogs on.",
+      "emoji": "🎥",
+      "url": "https://www.dji.com/osmo-pocket-3",
+      "cta": "See it on DJI",
+      "video": "https://youtu.be/HQyX3ktv7bs",
+      "videoText": "Why we bought it",
+      "affiliate": false
+    },
+    {
+      "name": "EVERCROSS EK30 Pro",
+      "blurb": "The £700 electric fat bike we took through the woods, over boulders and into a swamp.",
+      "emoji": "🚲",
+      "url": "https://evercrossbike.com/products/ek30-pro",
+      "cta": "See it on EVERCROSS",
+      "video": "https://youtu.be/pvKC9nEWyVw",
+      "videoText": "Watch our review",
+      "affiliate": false
+    }
+  ],
+  "socials": [
+    { "name": "YouTube", "handle": "@smoke_roach", "url": "https://www.youtube.com/@smoke_roach?sub_confirmation=1", "icon": "youtube" },
+    { "name": "TikTok", "handle": "@smoke_roach", "url": "https://www.tiktok.com/@smoke_roach", "icon": "tiktok" },
+    { "name": "All our links", "handle": "lnk.bio/smokeroach", "url": "https://lnk.bio/smokeroach", "icon": "link" },
+    { "name": "Business enquiries", "handle": "smokeroach0151@gmail.com", "url": "mailto:smokeroach0151@gmail.com", "icon": "mail" }
+  ]
+}
