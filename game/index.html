@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>£99 Challenge: the SmokeRoach game</title>
+<meta name="description" content="Run from Liverpool to Amsterdam on a £99 budget. Dodge £260 train tickets, stray bikes and tourist traps in the SmokeRoach pixel game. Play as Scott, Charlotte or Gunner.">
+<meta name="theme-color" content="#0c0320">
+<link rel="canonical" href="https://smokeroach.github.io/game/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SmokeRoach">
+<meta property="og:title" content="£99 Challenge: the SmokeRoach game">
+<meta property="og:description" content="Can you get from Liverpool to Amsterdam without going skint? Dodge the £260 train tickets and grab the £9 flights.">
+<meta property="og:url" content="https://smokeroach.github.io/game/">
+<meta property="og:image" content="https://smokeroach.github.io/game/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://smokeroach.github.io/game/og.jpg">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preload" href="../assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/outfit.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="game.css">
+</head>
+<body>
+<div id="stage">
+  <canvas id="game" aria-label="£99 Challenge game. Tap or press space to jump, swipe down or press down to duck." role="img"></canvas>
+
+  <div id="hud" aria-live="off">
+    <div class="h-budget"><span class="lbl">Budget</span><b id="hud-budget">£99</b><div class="bar"><i id="hud-bar" data-lvl="ok"></i></div></div>
+    <div class="h-score"><b id="hud-score">0</b><span id="hud-dist">0m</span></div>
+    <div class="h-btns"><button class="ib mute" type="button" aria-label="Toggle sound">🔊</button><button class="ib" id="btn-pause" type="button" aria-label="Pause">⏸</button></div>
+  </div>
+  <div id="banner" aria-live="polite"></div>
+  <div id="toast" role="status"></div>
+
+  <section class="overlay show" id="title" aria-hidden="false">
+    <div class="panel">
+      <a class="back" href="../">← SmokeRoach</a>
+      <p class="presents">SmokeRoach presents</p>
+      <h1 class="logo"><span class="l99">£99</span><span class="lch">Challenge</span></h1>
+      <p class="tag">Liverpool to Amsterdam without going skint. Dodge the rip-offs, grab the bargains.</p>
+      <div class="who"><span>Playing as</span><b id="who">Scott 🧢</b></div>
+      <button class="btn btn-play" id="play" type="button">▶ Play</button>
+      <p class="best">🏆 Best score: <b id="best">0</b></p>
+      <p class="hint" id="hint">Tap to jump · Swipe down to duck</p>
+      <p class="next">Next time you load the game you’ll play as <b id="who-next">Charlotte</b> 👀</p>
+      <button class="ib mute corner" type="button" aria-label="Toggle sound">🔊</button>
+    </div>
+  </section>
+
+  <section class="overlay" id="over" aria-hidden="true">
+    <div class="panel">
+      <p class="skint">SKINT!</p>
+      <p class="line" id="o-line">Scott’s gone skint!</p>
+      <div class="big"><span>Score</span><b id="o-score">0</b><em id="o-new" hidden>NEW BEST!</em></div>
+      <ul class="stats">
+        <li><span>Made it to</span><b id="o-where">Liverpool</b></li>
+        <li><span>Distance</span><b id="o-dist">0m</b></li>
+        <li><span>Coins</span><b id="o-coins">0</b></li>
+        <li><span>Best</span><b id="o-best">0</b></li>
+      </ul>
+      <button class="btn btn-play" id="again" type="button">↻ Play again</button>
+      <a class="btn btn-yt" href="https://youtu.be/6rVBsnNTFK4" target="_blank" rel="noopener">▶ Watch the real £99 Amsterdam trip</a>
+      <div class="row">
+        <button class="btn btn-ghost" id="share" type="button">📤 Share score</button>
+        <a class="btn btn-ghost" href="../">🏠 Back to hub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="overlay" id="paused" aria-hidden="true">
+    <div class="panel small">
+      <p class="skint">PAUSED</p>
+      <button class="btn btn-play" id="resume" type="button">▶ Carry on</button>
+      <a class="btn btn-ghost" href="../">🏠 Back to hub</a>
+    </div>
+  </section>
+</div>
+<noscript><p style="color:#fff;text-align:center;padding:40px">The £99 Challenge needs JavaScript switched on.</p></noscript>
+<script src="sprites.js"></script>
+<script src="stages.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
