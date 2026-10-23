@@ -1,0 +1,39 @@
+{
+  "_help": "Newest first. Fields: date (YYYY-MM-DD), tag (Channel | Life | Video | Goal), title, body, optional link + linkText, optional video (YouTube id shows its thumbnail).",
+  "posts": [
+    {
+      "date": "2026-10-22",
+      "tag": "Video",
+      "title": "New video: The YouTube Mistake I Wish I Knew at the Start 😩",
+      "body": "A camera rammed full of half-finished videos, a cheap mic that kept cutting out, and the DJI Mic Mini 2 that finally sorted the sound. The lesson: you don't need loads of gear, just start.",
+      "link": "https://youtu.be/HQyX3ktv7bs",
+      "linkText": "Watch it now",
+      "video": "HQyX3ktv7bs"
+    },
+    {
+      "date": "2026-10-22",
+      "tag": "Channel",
+      "title": "Nearly 500 subscribers 🎉",
+      "body": "The channel passed 495 subscribers this month. Massive thanks to everyone who's watched, commented and subscribed. Every single one counts.",
+      "link": "https://www.youtube.com/@smoke_roach?sub_confirmation=1",
+      "linkText": "Help us hit 500"
+    },
+    {
+      "date": "2026-10-22",
+      "tag": "Goal",
+      "title": "Next goal: 4,000 watch hours",
+      "body": "We're working towards 4,000 watch hours so the channel can be monetised. Watching the full videos genuinely helps us get there.",
+      "link": "https://www.youtube.com/@smoke_roach/videos",
+      "linkText": "Binge the videos"
+    },
+    {
+      "date": "2026-10-13",
+      "tag": "Video",
+      "title": "£249 all-inclusive in Mallorca ☀️",
+      "body": "Price Challenge #2: winter sun, all-inclusive, in Cala Ratjada, Mallorca, for £249.",
+      "link": "https://youtu.be/kis9rcRZRwM",
+      "linkText": "Watch the Mallorca video",
+      "video": "kis9rcRZRwM"
+    }
+  ]
+}
