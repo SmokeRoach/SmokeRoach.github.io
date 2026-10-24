@@ -227,7 +227,7 @@ function render(){ctx.setTransform(1,0,0,1,0,0);ctx.fillStyle='#0c0320';ctx.fill
   ctx.globalAlpha=o.hit?.55:1;ctx.drawImage(spr,Math.round(o.x),Math.round(o.y+(o.yy||0)));ctx.globalAlpha=1;}
  // player
  const f=frameFor();const shw=Math.max(6,16+pl.y*0.15);ctx.fillStyle='rgba(0,0,0,.35)';ctx.fillRect(Math.round(PX+(CH.dog?17:14)-shw/2),GY,Math.round(shw),2);
- if(f&&!(pl.inv>0&&((pl.inv*14|0)%2===0))||state!=='play')ctx.drawImage(f,PX,Math.round(GY-CH.foot-1+pl.y));
+ if(f){const blink=state==='play'&&pl.inv>0&&((pl.inv*14|0)%2===0);ctx.globalAlpha=blink?.55:1;ctx.drawImage(f,PX,Math.round(GY-CH.foot-1+pl.y));ctx.globalAlpha=1;}
  // particles
  for(const p of parts){ctx.globalAlpha=Math.max(0,p.l/p.m);ctx.fillStyle=p.c;ctx.fillRect(Math.round(p.x),Math.round(p.y),p.s,p.s);}ctx.globalAlpha=1;
  // native-res text layer

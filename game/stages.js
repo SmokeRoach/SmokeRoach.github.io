@@ -61,7 +61,7 @@ const STAGES=[
     px(x,B,TX+3,b-101,8,4);half(x,B,TX+7,b-102,4);px(x,HI,TX+5,b-105,2,1);
     px(x,B,TX+6,b-109,2,4);
     rows(x,'#0f3a2a',TX+4,b-115,BIRD,f);rows(x,'#6ff0a8',TX+4,b-116,BIRD,f);}
-   text3(x,'BELLA',X-1,b-124,'#ffd2f0');text3(x,'BERTIE',X+44,b-124,'#ffd2f0');}
+   text3(x,'BELLA',X-20,b-108,'#ffd2f0');text3(x,'BERTIE',X+64,b-108,'#ffd2f0');}
   // --- Cunard Building ---
   {const X=166;px(x,B,X,b-48,54,48);px(x,RIM,X,b-48,1,48);px(x,HI,X-1,b-49,56,2);px(x,B,X+2,b-52,50,3);
    for(let k=0;k<8;k++)px(x,HI,X+3+k*7,b-53,2,1);wins(x,r,X+3,b-44,X+53,b-3,4,6,2,3,.5,W,D);}
@@ -211,9 +211,9 @@ const STAGES=[
   water(x,r,b-34,b-14,'#3a5aa8','#1e3a7a',['#ffd8b0','#ffffff','#8ab0ff'],170);
   for(let i=0;i<30;i++)px(x,'#ffffff',r()*LW,b-16-(r()*4|0),3,1);
   // our ferry's funnels (white, blue band, red line, black top) with smoke
-  const funnel=X=>{x.globalAlpha=.35;for(let i=0;i<5;i++)disk(x,'#c8c0d8',X+20+i*7,b-90-i*2,4+i);x.globalAlpha=1;
-   px(x,'#f4f4fa',X,b-82,32,68);px(x,'#d0d0e2',X+26,b-82,6,68);px(x,'#1a1a2a',X,b-84,32,6);px(x,'#1f4fb4',X,b-68,32,8);px(x,'#e0283a',X,b-60,32,2);
-   px(x,'#a0a0b8',X+6,b-30,20,1);px(x,'#a0a0b8',X+6,b-26,20,1);};
+  const funnel=X=>{x.globalAlpha=.3;for(let i=0;i<4;i++)disk(x,'#c8c0d8',X+12+i*6,b-52-i*2,3+i);x.globalAlpha=1;
+   px(x,'#f4f4fa',X,b-46,18,24);px(x,'#d0d0e2',X+14,b-46,4,24);px(x,'#1a1a2a',X,b-48,18,4);px(x,'#1f4fb4',X,b-40,18,5);px(x,'#e0283a',X,b-35,18,1);
+   px(x,'#c8c8dc',X-4,b-22,26,1);};
   funnel(30);funnel(400);
   // lifeboat on davits
   {const X=96;px(x,'#9a9ab8',X,b-52,2,38);px(x,'#9a9ab8',X+60,b-52,2,38);px(x,'#9a9ab8',X,b-52,8,2);px(x,'#9a9ab8',X+54,b-52,8,2);
