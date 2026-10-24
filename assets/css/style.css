@@ -368,3 +368,12 @@ footer::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;b
 /* merch grid breakpoints (after promo styles) */
 @media (max-width:1180px){.merch{grid-template-columns:repeat(3,minmax(0,1fr))}.mpromo{grid-column:span 2}}
 @media (max-width:760px){.merch{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.minfo{padding:12px 12px 14px;gap:6px}.minfo h3{font-size:15px}.minfo p{display:none}.mprice{font-size:22px}.mrow{flex-direction:column;align-items:stretch}.mrow .btn{text-align:center;justify-content:center}.mpromo{grid-column:1/-1;padding:22px}.mpromo .mbig{font-size:30px}}
+
+/* SmokeRoach Shop hero button: logo + TM, popping outline, 10% bigger */
+.hero-cta-2 .btn.btn-shop{font-size:17.6px;padding:13.2px 22px 13.2px 13px;outline:3px solid #ff2bd6;outline-offset:3px;box-shadow:0 0 0 6px rgba(255,43,214,.18),0 0 26px rgba(255,43,214,.75),0 10px 28px rgba(240,191,122,.35);animation:shopGlow 2.4s ease-in-out infinite}
+.btn-shop:hover{outline-color:#8cff46;box-shadow:0 0 0 6px rgba(140,255,70,.2),0 0 30px rgba(140,255,70,.8)}
+.shop-logo{position:relative;display:inline-flex;flex-shrink:0}
+.shop-logo img{width:40px;height:40px;border-radius:50%;border:2px solid #8cff46;box-shadow:0 0 10px rgba(140,255,70,.7);display:block;background:#14052a}
+.shop-logo .tm{position:absolute;top:-8px;right:-13px;font-size:13px;font-weight:900;line-height:1;color:#2a1405}
+@keyframes shopGlow{0%,100%{outline-color:#ff2bd6}50%{outline-color:#8cff46}}
+@media (prefers-reduced-motion:reduce){.btn-shop{animation:none}}
