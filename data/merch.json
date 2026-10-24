@@ -1,0 +1,15 @@
+{
+  "_help": "Cards for the 'Merch' section. Add a product: name, blurb, price (as shown on Teemill), image (put it in assets/merch/), url (the Teemill product page), cta. Newest first.",
+  "shopUrl": "https://smokeroach.teemill.com/",
+  "items": [
+    {
+      "name": "SmokeRoach Airways Cabin Crew T-Shirt",
+      "blurb": "SmokeRoach Airways Cabin Crew: pilot, navigator, security. Scott, Charlotte and Gunner in pixel form, ready for take-off.",
+      "price": "£24",
+      "image": "assets/merch/smokeroach-airways-cabin-crew-tee.webp",
+      "url": "https://smokeroach.teemill.com/product/smokeroach-airways-cabin-crew-t-shirt/",
+      "cta": "Buy now",
+      "isNew": true
+    }
+  ]
+}

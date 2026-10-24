@@ -104,13 +104,27 @@
   get("data/news.json").then(function (d) {
     var posts = (d.posts || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
     $("#news-list").innerHTML = posts.map(function (p) {
-      var t = p.video && ytId.test(p.video) ? '<a class="pthumb" href="' + esc(safeUrl(p.link)) + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img loading="lazy" src="' + thumb(p.video, "mqdefault") + '" alt=""></a>' : "";
+      var src = p.video && ytId.test(p.video) ? thumb(p.video, "mqdefault") : (p.image && /^assets\//.test(p.image) ? p.image : "");
+      var t = src ? '<a class="pthumb' + (p.video ? "" : " pimg") + '" href="' + esc(safeUrl(p.link)) + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img loading="lazy" src="' + esc(src) + '" alt=""></a>' : "";
       return '<article class="card post reveal">' + t + '<div><span class="tag tag-' + esc(p.tag) + '">' + esc(p.tag || "News") + '</span><time class="pdate" datetime="' + esc(p.date) + '">' + fmtDate(p.date) + '</time>' +
         '<h3>' + esc(p.title) + '</h3><p>' + esc(p.body) + '</p>' +
         (p.link ? '<a class="go" href="' + esc(safeUrl(p.link)) + '" target="_blank" rel="noopener">' + esc(p.linkText || "Read more") + '</a>' : "") + '</div></article>';
     }).join("");
     watch();
   }).catch(function () { $("#news-list").innerHTML = '<p>News is loading slowly. Try refreshing.</p>'; });
+
+  /* ---------- merch ---------- */
+  get("data/merch.json").then(function (d) {
+    if (d.shopUrl) $("#shop-all").href = safeUrl(d.shopUrl);
+    $("#merch-list").innerHTML = (d.items || []).map(function (m) {
+      var url = esc(safeUrl(m.url));
+      return '<article class="card mcard reveal">' + (m.isNew ? '<span class="mnew">New</span>' : "") +
+        '<a class="mimg" href="' + url + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img loading="lazy" width="800" height="800" src="' + esc(m.image) + '" alt=""></a>' +
+        '<div class="minfo"><h3>' + esc(m.name) + '</h3>' + (m.price ? '<div class="mprice">' + esc(m.price) + '</div>' : "") + '<p>' + esc(m.blurb) + '</p>' +
+        '<div class="gactions"><a class="btn btn-green btn-sm" href="' + url + '" target="_blank" rel="noopener">' + esc(m.cta || "Buy now") + ' ↗</a></div></div></article>';
+    }).join("");
+    watch();
+  }).catch(function () { $("#merch-list").innerHTML = '<p>Merch is loading slowly. <a href="https://smokeroach.teemill.com/" target="_blank" rel="noopener">Visit the shop</a>.</p>'; });
 
   /* ---------- gear & socials ---------- */
   var icons = {

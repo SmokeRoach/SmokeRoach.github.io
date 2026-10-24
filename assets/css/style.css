@@ -139,6 +139,21 @@ section{padding:70px 0}
 .rules li::marker{color:var(--yellow);font-weight:800}
 .rules .small{font-size:14px;color:var(--muted)}
 
+/* merch */
+.merch{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.mcard{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:0;overflow:hidden;position:relative;transition:transform .2s,border-color .2s}
+.mcard:hover{transform:translateY(-4px);border-color:var(--pink)}
+.mimg{display:block;background:#fff;aspect-ratio:1}
+.mimg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.mcard:hover .mimg img{transform:scale(1.04)}
+.minfo{padding:24px;display:flex;flex-direction:column;gap:8px}
+.minfo h3{margin:0;font-size:22px;line-height:1.25}
+.minfo p{margin:0;color:var(--muted);font-size:16px}
+.mprice{font-family:var(--display);font-size:34px;line-height:1;color:var(--yellow);text-shadow:0 0 22px rgba(255,214,10,.35)}
+.mnew{position:absolute;top:14px;left:14px;z-index:2;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 11px;border-radius:999px;background:var(--pink);color:#fff;box-shadow:0 0 18px rgba(255,43,214,.6)}
+.post .pthumb.pimg{aspect-ratio:1;width:110px;background:#fff}
+.tag-Merch{background:rgba(255,43,214,.18);color:#ff7ae6}
+
 /* gear */
 .note{display:flex;gap:12px;align-items:center;padding:14px 18px;margin-bottom:22px;border-radius:16px;background:rgba(255,214,10,.08);border:1px dashed rgba(255,214,10,.45);color:#ffe98a;font-weight:600;font-size:15px}
 .gear{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -192,6 +207,7 @@ footer{border-top:1px solid var(--line);padding:44px 0 50px;background:rgba(0,0,
 /* responsive */
 @media (max-width:980px){
   .grid,.gear{grid-template-columns:repeat(2,1fr)}
+  .merch{grid-template-columns:1fr}
   .socials{grid-template-columns:repeat(2,1fr)}
   .feature,.chat-grid,.about .card{grid-template-columns:1fr}
   .news{grid-template-columns:1fr}
@@ -213,6 +229,8 @@ footer{border-top:1px solid var(--line);padding:44px 0 50px;background:rgba(0,0,
   .btn-big{font-size:19px;padding:17px 24px}
   .post{flex-direction:column;padding:20px}
   .post .pthumb{width:100%}
+  .post .pthumb.pimg{width:100%}
+  .mcard{grid-template-columns:1fr}
   .feature .info{padding:20px}
   .vcard{flex-direction:row;align-items:stretch}
   .vcard .thumb{width:42%;flex-shrink:0;aspect-ratio:16/10}

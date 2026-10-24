@@ -1,6 +1,15 @@
 {
-  "_help": "Newest first. Fields: date (YYYY-MM-DD), tag (Channel | Life | Video | Goal), title, body, optional link + linkText, optional video (YouTube id shows its thumbnail).",
+  "_help": "Newest first. Fields: date (YYYY-MM-DD), tag (Channel | Life | Video | Goal | Merch), title, body, optional link + linkText, optional video (YouTube id shows its thumbnail) or image (a path under assets/).",
   "posts": [
+    {
+      "date": "2026-10-24",
+      "tag": "Merch",
+      "title": "New merch: SmokeRoach Airways Cabin Crew tee ✈️",
+      "body": "Pilot, navigator, security: Scott, Charlotte and Gunner are now on a T-shirt. The SmokeRoach Airways Cabin Crew tee is £24 on our Teemill shop.",
+      "link": "https://smokeroach.teemill.com/product/smokeroach-airways-cabin-crew-t-shirt/",
+      "linkText": "Get yours",
+      "image": "assets/merch/smokeroach-airways-cabin-crew-tee.webp"
+    },
     {
       "date": "2026-10-22",
       "tag": "Video",
