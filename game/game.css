@@ -44,7 +44,7 @@ button,a{touch-action:manipulation;font-family:var(--body)}
 #over .panel,#paused .panel{background:rgba(21,6,48,.86);border:2px solid rgba(255,43,214,.45);border-radius:26px;padding:22px 20px;box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 40px rgba(255,43,214,.2);backdrop-filter:blur(10px)}
 #title{align-items:start;background:radial-gradient(ellipse 60% 75% at 50% 38%,rgba(12,3,32,.62),rgba(12,3,32,0) 75%),linear-gradient(180deg,rgba(12,3,32,.5),rgba(12,3,32,0) 55%,rgba(12,3,32,.2))}
 #title .panel{margin-top:max(2vh,8px)}
-.back{position:absolute;left:0;top:-4px;color:var(--muted);text-decoration:none;font-weight:700;font-size:14px;padding:6px 4px}
+.back{position:absolute;left:0;top:-4px;color:#fff;text-decoration:none;font-weight:800;font-size:14px;padding:6px 12px;border-radius:999px;background:rgba(7,2,15,.7);border:1px solid rgba(124,255,58,.45);box-shadow:0 0 14px rgba(124,255,58,.2)}
 .back:hover{color:#fff}
 .corner{position:absolute;right:0;top:-6px}
 .presents{margin:26px 0 0;font-weight:800;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--green);text-shadow:0 0 12px rgba(124,255,58,.6)}

@@ -36,6 +36,7 @@
   ],
   "socials": [
     { "name": "YouTube", "handle": "@smoke_roach", "url": "https://www.youtube.com/@smoke_roach?sub_confirmation=1", "icon": "youtube" },
+    { "name": "Instagram", "handle": "@smoke_roach", "url": "https://www.instagram.com/smoke_roach/", "icon": "instagram" },
     { "name": "TikTok", "handle": "@smoke_roach", "url": "https://www.tiktok.com/@smoke_roach", "icon": "tiktok" },
     { "name": "All our links", "handle": "lnk.bio/smokeroach", "url": "https://lnk.bio/smokeroach", "icon": "link" },
     { "name": "Business enquiries", "handle": "smokeroach0151@gmail.com", "url": "mailto:smokeroach0151@gmail.com", "icon": "mail" }
