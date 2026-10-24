@@ -119,9 +119,9 @@
     $("#merch-list").innerHTML = (d.items || []).map(function (m) {
       var url = esc(safeUrl(m.url));
       return '<article class="card mcard reveal">' + (m.isNew ? '<span class="mnew">New</span>' : "") +
-        '<a class="mimg" href="' + url + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img loading="lazy" width="800" height="800" src="' + esc(m.image) + '" alt=""></a>' +
-        '<div class="minfo"><h3>' + esc(m.name) + '</h3>' + (m.price ? '<div class="mprice">' + esc(m.price) + '</div>' : "") + '<p>' + esc(m.blurb) + '</p>' +
-        '<div class="gactions"><a class="btn btn-green btn-sm" href="' + url + '" target="_blank" rel="noopener">' + esc(m.cta || "Buy now") + ' ↗</a></div></div></article>';
+        '<a class="mimg" href="' + url + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img loading="lazy" width="800" height="800" src="' + esc(m.image) + '" alt="' + esc(m.name) + '"></a>' +
+        '<div class="minfo"><h3>' + esc(m.name) + '</h3><p>' + esc(m.blurb) + '</p>' +
+        '<div class="mrow">' + (m.price ? '<div class="mprice">' + esc(m.price) + '</div>' : "") + '<a class="btn btn-green btn-sm" href="' + url + '" target="_blank" rel="noopener" aria-label="' + esc((m.cta || "Buy now") + ": " + m.name) + '">' + esc(m.cta || "Buy now") + ' ↗</a></div></div></article>';
     }).join("") + '<a class="card mpromo reveal" href="' + esc(safeUrl(d.shopUrl || "https://smokeroach.teemill.com/")) + '" target="_blank" rel="noopener">' +
       '<span class="kicker k-gold">The full SmokeRoach shop</span><span class="mbig">More crew designs</span>' +
       '<p>Budget-travel tees from the crew, printed to order on organic cotton by Teemill. New drops land here first.</p><span class="btn btn-gold btn-sm">Browse the shop ↗</span></a>';
