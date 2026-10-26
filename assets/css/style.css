@@ -377,3 +377,14 @@ footer::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;b
 .shop-logo .tm{position:absolute;top:-8px;right:-13px;font-size:13px;font-weight:900;line-height:1;color:#2a1405}
 @keyframes shopGlow{0%,100%{outline-color:#ff2bd6}50%{outline-color:#8cff46}}
 @media (prefers-reduced-motion:reduce){.btn-shop{animation:none}}
+/* Games section */
+#games .sec-head{margin-bottom:22px}
+#games .anchor{position:relative;top:-80px;display:block}
+.games-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:22px}
+.game-card{display:flex;flex-direction:column;overflow:hidden;text-decoration:none;color:inherit;border-color:rgba(124,255,58,.35);transition:transform .2s,box-shadow .2s}
+.game-card:hover{transform:translateY(-3px);box-shadow:0 18px 50px rgba(124,255,58,.18)}
+.game-card img{width:100%;aspect-ratio:1200/630;object-fit:cover;display:block}
+.game-card .info{padding:22px;display:flex;flex-direction:column;gap:10px;align-items:flex-start;flex:1}
+.game-card h3{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(24px,2.6vw,32px);line-height:1.05;text-transform:uppercase}
+.game-card p{margin:0;color:var(--muted);line-height:1.55;flex:1}
+@media (max-width:760px){.games-grid{grid-template-columns:1fr}}

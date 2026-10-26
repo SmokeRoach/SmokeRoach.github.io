@@ -44,7 +44,7 @@
   <div class="wrap">
     <a class="brand" href="#top" aria-label="SmokeRoach home"><img src="assets/img/avatar.webp" alt="" width="38" height="38">Smoke<span>Roach</span></a>
     <nav class="nav" aria-label="Main">
-      <a href="#videos">Videos</a><a href="#merch">Shop</a><a href="#news">News</a><a class="nav-game" href="game/">🎮 Game</a><a href="#chat">Chat</a><a href="#gear">Gear &amp; links</a><a href="#about">About</a>
+      <a href="#videos">Videos</a><a href="#merch">Shop</a><a href="#news">News</a><a class="nav-game" href="#games">🎮 Games</a><a href="#chat">Chat</a><a href="#gear">Gear &amp; links</a><a href="#about">About</a>
     </nav>
     <a class="btn btn-yt btn-sm btn-sub-sm" href="https://www.youtube.com/@smoke_roach?sub_confirmation=1" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>Subscribe</a>
   </div>
@@ -146,8 +146,13 @@
   </div>
 </section>
 
-<section class="play" id="play" aria-labelledby="play-h">
+<section class="play" id="games" aria-labelledby="games-h">
+  <span id="play" class="anchor" aria-hidden="true"></span>
   <div class="wrap">
+    <div class="sec-head reveal">
+      <div><span class="kicker k-green">Free to play · in your browser</span><h2 id="games-h">SmokeRoach <span class="hl">Games</span></h2>
+      <p>Play as Scott, Charlotte and Gunner. No downloads and no sign-up. Works on phones too.</p></div>
+    </div>
     <a class="card play-card reveal" href="game/">
       <img src="game/og.jpg" alt="The £99 Challenge: a pixel-art game starring Scott, Charlotte and Gunner" width="1200" height="630" loading="lazy">
       <div class="info">
@@ -157,6 +162,26 @@
         <span class="btn btn-green">▶ Play the game</span>
       </div>
     </a>
+    <div class="games-grid">
+      <a class="card game-card reveal" href="games/scooter-surfers/">
+        <img src="games/scooter-surfers/thumb.jpg" alt="SmokeRoach Scooter Surfers: riding a scooter past trams on an Amsterdam canal street" width="1200" height="630" loading="lazy">
+        <div class="info">
+          <span class="kicker k-cyan">3D endless runner</span>
+          <h3>SmokeRoach Scooter Surfers</h3>
+          <p>Scoot from Liverpool through the Euro Tunnel to Amsterdam, dodging trams and grabbing coins.</p>
+          <span class="btn btn-green">▶ Play</span>
+        </div>
+      </a>
+      <a class="card game-card reveal" href="games/amsterdam/">
+        <img src="games/amsterdam/thumb.jpg" alt="SmokeRoach: De Wallen: Scott with the 420 jet pack on an Amsterdam rooftop" width="1200" height="630" loading="lazy">
+        <div class="info">
+          <span class="kicker k-gold">Open world · online with voice chat</span>
+          <h3>SmokeRoach: De Wallen</h3>
+          <p>Explore Amsterdam's old centre by bike, scooter, boat or the 420 jet pack, with up to 8 friends on voice chat.</p>
+          <span class="btn btn-green">▶ Play</span>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -243,7 +268,7 @@
         <a href="https://lnk.bio/smokeroach" target="_blank" rel="noopener">lnk.bio</a>
       </nav>
       <nav class="foot-col" aria-label="Explore"><h3>Explore</h3>
-        <a href="#videos">Videos</a><a href="https://smokeroach.teemill.com/" target="_blank" rel="noopener">SmokeRoach Shop</a><a href="game/">£99 Challenge game</a><a href="#chat">Chat room</a>
+        <a href="#videos">Videos</a><a href="https://smokeroach.teemill.com/" target="_blank" rel="noopener">SmokeRoach Shop</a><a href="game/">£99 Challenge game</a><a href="games/scooter-surfers/">Scooter Surfers</a><a href="games/amsterdam/">De Wallen (online)</a><a href="#chat">Chat room</a>
       </nav>
       <nav class="foot-col" aria-label="Footer"><h3>The small print</h3>
         <a href="#about">Channel Manager</a>
@@ -262,7 +287,7 @@
   <a href="#merch"><span>👕</span>Shop</a>
   <a href="#news"><span>📰</span>News</a>
   <a href="#chat"><span>💬</span>Chat</a>
-  <a href="game/"><span>🎮</span>Game</a>
+  <a href="#games"><span>🎮</span>Games</a>
 </nav>
 
 <script src="assets/js/main.js" defer></script>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>SmokeRoach: De Wallen — Open World Amsterdam</title>
+<meta name="description" content="SmokeRoach open-world Amsterdam: explore a real-map De Wallen by bike, scooter and canal boat with Scott, Charlotte and Gunner.">
+  <script type="module" crossorigin src="./assets/index-8AUIJTQb.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Bl-Ztghk.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="loading"><div class="logo small">SMOKE<span>ROACH</span></div><div id="loadtxt">Loading Amsterdam…</div><div class="bar"><i id="loadbar"></i></div></div>
+
+<div id="title" class="screen hidden">
+  <div class="tbox">
+    <div class="neon">SMOKE<span>ROACH</span></div>
+    <div class="sub">DE WALLEN <b>·</b> OPEN WORLD AMSTERDAM</div>
+    <div class="tag">Scott, Charlotte &amp; Gunner hit the Red Light District. Real streets. Real canals. Zero budget.</div>
+    <div class="btns">
+      <button id="bPlay" class="big">PLAY SOLO</button>
+      <button id="bOnline" class="big online">PLAY ONLINE <small>· up to 8 · voice chat</small></button>
+      <button data-open="howto">HOW TO PLAY</button>
+      <button data-open="settings">SETTINGS</button>
+      <button data-open="credits">CREDITS</button>
+    </div>
+    <div class="foot">Map data © OpenStreetMap contributors (ODbL). Fan-made, non-commercial.</div>
+  </div>
+</div>
+
+<div id="pause" class="screen hidden">
+  <div class="panel">
+    <h2>PAUSED</h2>
+    <button id="bResume" class="big">RESUME</button>
+    <button id="bMap">MAP</button>
+    <button data-open="howto">CONTROLS</button>
+    <button data-open="settings">SETTINGS</button>
+    <button data-open="credits">CREDITS</button>
+    <button id="bQuit">QUIT TO TITLE</button>
+  </div>
+</div>
+
+<div id="howto" class="screen modal hidden"><div class="panel wide">
+  <h2>HOW TO PLAY</h2>
+  <div class="cols">
+  <div><h3>On foot</h3><p><kbd>W A S D</kbd> move · <kbd>Shift</kbd> run · <kbd>Space</kbd> jump<br><kbd>Mouse</kbd> look (click to lock) · <kbd>E</kbd> / <kbd>F</kbd> ride the nearest bike, scooter, car or boat / start missions</p></div>
+  <div><h3>Driving</h3><p><kbd>W</kbd>/<kbd>S</kbd> throttle &amp; brake/reverse · <kbd>A</kbd>/<kbd>D</kbd> steer · <kbd>Space</kbd> handbrake · <kbd>H</kbd> bell/horn · <kbd>E</kbd> get off</p></div>
+  <div><h3>Other</h3><p><kbd>M</kbd> map · <kbd>Tab</kbd> players · <kbd>T</kbd> chat · <kbd>C</kbd> camera reset · <kbd>Esc</kbd>/<kbd>P</kbd> pause</p></div>
+  <div><h3>420 jet pack</h3><p>Get on and off a scooter 4 times and the <b>420</b> jet pack drops in front of you. Walk into it or press <kbd>E</kbd>. <kbd>Space</kbd> thrust up · <kbd>Shift</kbd>/<kbd>Ctrl</kbd> down · <kbd>W A S D</kbd> fly. Land on any rooftop and walk around up there.</p></div>
+  <div><h3>Online &amp; voice</h3><p>PLAY ONLINE, pick a nickname, join the public lobby or a room code (max 8). Press <kbd>🎤</kbd> to allow your mic, then hold <kbd>V</kbd> to talk or toggle open mic. Voices are positional — players closer to you sound louder. <kbd>Tab</kbd> players list &amp; mute.</p></div>
+  <div><h3>Goals</h3><p>Find Gunner, do the Bitterballen Run, race the canals and Damrak, and collect all 10 travel stamps for your passport. Ride recklessly and the Politie will come for you — lose them to drop your heat.</p></div>
+  </div>
+  <p class="muted">Touch: left stick to move, drag right side to look, buttons for jump / ride / run / bell. Online: hold the big TALK button to speak.</p>
+  <button class="close">BACK</button></div></div>
+
+<div id="settings" class="screen modal hidden"><div class="panel">
+  <h2>SETTINGS</h2>
+  <label>Graphics <select id="sQ"><option value="low">Low (fast)</option><option value="medium">Medium</option><option value="high">High</option></select></label>
+  <label>Music <input id="sM" type="range" min="0" max="1" step="0.05"></label>
+  <label>Sound FX <input id="sS" type="range" min="0" max="1" step="0.05"></label>
+  <label>Mouse sensitivity <input id="sSens" type="range" min="0.3" max="2.5" step="0.1"></label>
+  <p class="muted">Graphics change applies after reload. Day and night cycle automatically (20 min day · 4 min night), the same for everyone online.</p>
+  <button class="close">BACK</button></div></div>
+
+<div id="credits" class="screen modal hidden"><div class="panel wide">
+  <h2>CREDITS</h2>
+  <p><b>SmokeRoach: De Wallen</b> — a fan game for the SmokeRoach channel (Scott, Charlotte &amp; Gunner).</p>
+  <p><b>Map:</b> streets, canals, bridges, building footprints, heights and shop names from <b>© OpenStreetMap contributors</b>, available under the Open Database License (ODbL) — openstreetmap.org/copyright. Data fetched via the Overpass API.</p>
+  <p><b>Engine:</b> three.js (MIT). Built with Vite. <b>Multiplayer:</b> Trystero (MIT) — peer-to-peer WebRTC, matchmaking through public Nostr relays; no game server, no accounts.</p>
+  <p><b>Art:</b> all 3D models, facades, signage and textures are original procedural creations made for this game. Shop names come from OSM; no logos or photos are used.</p>
+  <p><b>Audio:</b> all music and sound effects are synthesised live in your browser (Web Audio), original.</p>
+  <p><b>Fonts:</b> Monoton, Bungee, Bebas Neue, Pacifico, Work Sans — SIL Open Font License.</p>
+  <p class="muted">Not affiliated with or endorsed by any business shown. Be kind, respect the locals, and don't take photos of the windows.</p>
+  <button class="close">BACK</button></div></div>
+
+<div id="hud" class="hidden">
+  <div id="obj"><div id="objT"></div><div id="objD"></div></div>
+  <div id="stats"><div id="stars"></div><div id="money">€0</div><div id="stampc">🛂 0/10</div><div id="clock">23:00</div></div>
+  <div id="timer" class="hidden"></div>
+  <canvas id="mini" width="220" height="220"></canvas>
+  <div id="speedo" class="hidden"><b id="kmh">0</b><span>km/h</span><i id="vname"></i></div>
+  <div id="prompt" class="hidden"></div>
+  <div id="toasts"></div>
+  <div id="big" class="hidden"></div>
+  <div id="area"></div>
+</div>
+<div id="bigmap" class="screen hidden"><canvas id="mapc"></canvas><div class="maplegend">● You &nbsp; <span style="color:#ffd23a">●</span> Missions &nbsp; <span style="color:#ff6ad5">●</span> Stamps &nbsp; <span style="color:#7affb0">●</span> Target · <kbd>M</kbd> / tap to close</div></div>
+
+<div id="online" class="screen modal hidden"><div class="panel">
+  <h2>PLAY ONLINE</h2>
+  <label>Nickname <input id="nick" maxlength="16" placeholder="e.g. ScouseScott" autocomplete="off" autocapitalize="off" spellcheck="false"></label>
+  <button id="bLobby" class="big">JOIN PUBLIC LOBBY</button>
+  <div class="orrow">or play with friends in a private room</div>
+  <label>Room code <input id="rcode" maxlength="8" placeholder="ABC123" autocomplete="off" autocapitalize="characters" spellcheck="false"></label>
+  <div class="row2"><button id="bRoom">JOIN ROOM</button><button id="bNewRoom">CREATE NEW</button></div>
+  <p id="onErr" class="err hidden"></p>
+  <p class="muted">Max 8 players per room. Peer-to-peer (WebRTC) — your nickname is your login, nothing else is stored. Voice is OFF until you tap 🎤 and allow the microphone. NPCs, police and missions are your own.</p>
+  <button class="close">BACK</button></div></div>
+
+<div id="fullModal" class="screen modal hidden"><div class="panel">
+  <h2>ROOM FULL</h2><p id="fullMsg">This room already has 8 players.</p>
+  <button class="close">OK</button></div></div>
+
+<div id="micModal" class="screen modal hidden"><div class="panel">
+  <h2>MIC BLOCKED</h2><p id="micMsg"></p>
+  <div id="micHelp" class="mhelp"></div>
+  <button id="bMicRetry">TRY AGAIN</button><button class="close">OK</button></div></div>
+
+<button id="tapAudio" class="hidden">🔊 Tap to enable audio</button>
+<div id="peerAudio" aria-hidden="true"></div>
+
+<div id="netui" class="hidden">
+  <div id="netbar"><span id="netst">🌐 offline</span>
+    <button id="bMic" title="Voice on/off (allow microphone)">🎤</button><button id="bOpen" title="Open mic toggle">🎙 OPEN</button><button id="bMuteAll" title="Mute everyone">🔈</button><button id="bPlayers" title="Players (Tab)">👥</button><button id="bChat" title="Chat (T)">💬</button></div>
+  <div id="plist" class="hidden"></div>
+  <div id="chatlog"></div>
+  <form id="chatf" class="hidden"><input id="chatIn" maxlength="140" placeholder="Say something… (Enter to send, Esc to close)" autocomplete="off"></form>
+  <button id="ttalk" class="hidden">HOLD<br>TO TALK</button>
+</div>
+<div id="jetHud" class="hidden"><b>🚀 420 JET PACK</b><span id="jetAlt">0 m</span><small id="jetHelp"><kbd>Space</kbd> up · <kbd>Shift</kbd>/<kbd>Ctrl</kbd> down · <kbd>WASD</kbd> fly</small></div>
+
+<div id="touch" class="hidden">
+  <div id="stick"><i></i></div>
+  <div id="tbtns"><button data-k="Space">JUMP</button><button data-k="KeyE">RIDE</button><button data-k="ShiftLeft">RUN</button><button data-k="KeyH">🔔</button><button data-k="KeyM">MAP</button><button data-k="KeyP">II</button><button data-k="ControlLeft" id="tDown" class="hidden">DOWN</button></div>
+</div>
+</body>
+</html>

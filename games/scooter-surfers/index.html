@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover" />
+<meta name="theme-color" content="#1a0638" />
+<title>SmokeRoach Scooter Surfers – Liverpool ➜ Amsterdam</title>
+<link rel="icon" href="./icon.png" />
+<meta property="og:title" content="SmokeRoach Scooter Surfers" />
+<meta property="og:description" content="Scoot from Liverpool through the Eurotunnel to Amsterdam with Scott, Charlotte and Gunner." />
+  <script type="module" crossorigin src="./assets/index-C2l9N94G.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-B2vk3FGi.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="c"></canvas>
+  <div id="flash"></div>
+  <div id="vignette"></div>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <button id="btnPause" class="iconbtn" aria-label="Pause">❚❚</button>
+    <div id="hudRight">
+      <div id="score" class="pill">0</div>
+      <div id="coins" class="pill coinpill"><span class="coinicon"></span><span id="coinNum">0</span></div>
+      <div id="mult" class="pill multpill">x1</div>
+    </div>
+    <div id="powerups"></div>
+    <div id="zoneTag"></div>
+    <div id="popups"></div>
+  </div>
+
+  <!-- Zone card -->
+  <div id="zoneCard"><div class="zc-inner"><div class="zc-num"></div><div class="zc-title"></div><div class="zc-sub"></div></div></div>
+
+  <!-- Title -->
+  <div id="title" class="screen">
+    <div class="title-wrap">
+      <img src="./badge.png" class="badge" alt="SmokeRoach" />
+      <h1 class="logo"><span>SCOOTER</span><span>SURFERS</span></h1>
+      <div class="route">Liverpool <b>➜</b> Eurotunnel <b>➜</b> Amsterdam</div>
+      <button id="btnPlay" class="bigbtn">PLAY</button>
+      <div class="row">
+        <button id="btnHow" class="smallbtn">How to play</button>
+        <button id="btnCredits" class="smallbtn">Credits</button>
+        <button id="btnSound" class="smallbtn">🔊 Sound</button>
+      </div>
+      <div class="best">Best: <span id="bestScore">0</span></div>
+    </div>
+  </div>
+
+  <div id="how" class="screen hidden panel-screen">
+    <div class="panel">
+      <h2>How to play</h2>
+      <div class="howgrid">
+        <div><kbd>←</kbd><kbd>→</kbd> / <kbd>A</kbd><kbd>D</kbd><br><small>or swipe left/right</small></div><div>Change lane</div>
+        <div><kbd>↑</kbd> / <kbd>W</kbd> / <kbd>Space</kbd><br><small>or swipe up</small></div><div>Jump (barriers, bikes, cones)</div>
+        <div><kbd>↓</kbd> / <kbd>S</kbd><br><small>or swipe down</small></div><div>Duck under signs &amp; bars (fast-drop in the air)</div>
+        <div><kbd>P</kbd> / <kbd>Esc</kbd></div><div>Pause</div>
+        <div><kbd>M</kbd></div><div>Mute</div>
+      </div>
+      <div class="pugrid">
+        <div><span class="pu-ico mag">🧲</span> Magnet – pulls in coins</div>
+        <div><span class="pu-ico x2">2×</span> Double score</div>
+        <div><span class="pu-ico rocket">🚀</span> Rocket boost – fly over everything</div>
+      </div>
+      <p>Clip the side of something and you'll wobble – clip another while wobbling and it's a wipeout! Hit anything head-on and it's game over.</p>
+      <button class="smallbtn back">Back</button>
+    </div>
+  </div>
+
+  <div id="credits" class="screen hidden panel-screen">
+    <div class="panel">
+      <h2>Credits</h2>
+      <p><b>SmokeRoach Scooter Surfers</b><br>Starring Scott, Charlotte &amp; Gunner of <b>SmokeRoach</b> (youtube.com/@smoke_roach)</p>
+      <p>Game design, code, 3D models, music &amp; sound effects: made for SmokeRoach by Grok Bot. Every 3D model is built in code from primitives, and all music and sound effects are synthesised live with the Web Audio API. No third-party models, samples or tracks are used.</p>
+      <p>Engine: <b>three.js</b> (MIT licence) · Build: Vite (MIT)<br>Fonts: <b>Fredoka</b> &amp; <b>Bungee</b> (SIL Open Font Licence)</p>
+      <p>Landmarks are affectionate cartoon nods, not exact replicas. Not affiliated with Eurotunnel/Getlink, GVB, or any city authority.</p>
+      <button class="smallbtn back">Back</button>
+    </div>
+  </div>
+
+  <!-- Pause -->
+  <div id="pause" class="screen hidden panel-screen">
+    <div class="panel center">
+      <h2>Paused</h2>
+      <button id="btnResume" class="bigbtn">RESUME</button>
+      <div class="row col">
+        <button id="btnRestart" class="smallbtn">Restart</button>
+        <button id="btnSound2" class="smallbtn">🔊 Sound</button>
+        <button id="btnQuality" class="smallbtn">Graphics: High</button>
+        <button id="btnQuit" class="smallbtn">Main menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game over -->
+  <div id="over" class="screen hidden panel-screen">
+    <div class="panel center">
+      <h2 class="wipe">WIPEOUT!</h2>
+      <div id="newBest" class="hidden">★ NEW BEST ★</div>
+      <div class="stats">
+        <div><span>Score</span><b id="oScore">0</b></div>
+        <div><span>Coins</span><b id="oCoins">0</b></div>
+        <div><span>Distance</span><b id="oDist">0 m</b></div>
+        <div><span>Made it to</span><b id="oZone">Liverpool</b></div>
+      </div>
+      <button id="btnAgain" class="bigbtn">PLAY AGAIN</button>
+      <div class="row"><button id="btnMenu" class="smallbtn">Main menu</button></div>
+    </div>
+  </div>
+
+  <div id="loading">Loading…</div>
+</div>
+</body>
+</html>

@@ -3,4 +3,6 @@
   <url><loc>https://smokeroach.github.io/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://smokeroach.github.io/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://smokeroach.github.io/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://smokeroach.github.io/games/scooter-surfers/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://smokeroach.github.io/games/amsterdam/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
