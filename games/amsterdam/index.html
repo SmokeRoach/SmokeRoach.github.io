@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>SmokeRoach: De Wallen — Open World Amsterdam</title>
 <meta name="description" content="SmokeRoach open-world Amsterdam: explore a real-map De Wallen by bike, scooter and canal boat with Scott, Charlotte and Gunner.">
-  <script type="module" crossorigin src="./assets/index-BJ_4zrmW.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-CEyC8QMa.css">
+  <script type="module" crossorigin src="./assets/index-pgTXkJeA.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-Tfm1fgs5.css">
 </head>
 <body>
 <canvas id="c"></canvas>
@@ -45,7 +45,8 @@
   <h2>HOW TO PLAY</h2>
   <div class="cols">
   <div><h3>On foot</h3><p><kbd>W A S D</kbd> move · <kbd>Shift</kbd> run · <kbd>Space</kbd> jump<br><kbd>Mouse</kbd> look (click to lock) · <kbd>E</kbd> / <kbd>F</kbd> ride the nearest bike, scooter, car or boat / start missions</p></div>
-  <div><h3>The Gunner's Den</h3><p>Three floors of coffeeshop by the canal — walk in, take the stairs, and press <kbd>E</kbd> next to a seat to sit down. The menu opens with six strains to spend your euros on (each gives a short, harmless buff). <kbd>Q</kbd> reopens the menu, <kbd>E</kbd> stands up. One of them is suspiciously cheap…</p></div>
+  <div><h3>The Gunner's Den</h3><p>Three floors of coffeeshop by the canal. Talk to the budtender at the <b>till</b> on the ground floor (<kbd>E</kbd>) to buy strains — <b>collect all 8</b> (🌿 x/8 on the HUD). Each one has its own silly 10–15 s screen effect, and any purchase has a 1 in 8 chance to make you <b>hit white in the Dam</b>. Sit on a seat upstairs (<kbd>E</kbd>) for the lounge chat room. Collect all 8 to unlock the final level…</p></div>
+  <div><h3>Red-light windows</h3><p>Walk up to a window and press <kbd>E</kbd> to say hello. Tip €5 and she'll step out for a ridiculous glitch dance in the street to a boom-bap beat.</p></div>
   <div><h3>Driving</h3><p><kbd>W</kbd>/<kbd>S</kbd> throttle &amp; brake/reverse · <kbd>A</kbd>/<kbd>D</kbd> steer · <kbd>Space</kbd> handbrake · <kbd>H</kbd> bell/horn · <kbd>E</kbd> get off</p></div>
   <div><h3>Other</h3><p><kbd>M</kbd> map · <kbd>Tab</kbd> players · <kbd>T</kbd> chat · <kbd>C</kbd> camera reset · <kbd>Esc</kbd>/<kbd>P</kbd> pause</p></div>
   <div><h3>420 jet pack</h3><p>Get on and off a scooter 4 times and the <b>420</b> jet pack drops in front of you. Walk into it or press <kbd>E</kbd>. <kbd>Space</kbd> thrust up · <kbd>Shift</kbd>/<kbd>Ctrl</kbd> down · <kbd>W A S D</kbd> fly. Land on any rooftop and walk around up there.</p></div>
@@ -61,6 +62,8 @@
   <label>Music <input id="sM" type="range" min="0" max="1" step="0.05"></label>
   <label>Sound FX <input id="sS" type="range" min="0" max="1" step="0.05"></label>
   <label>Mouse sensitivity <input id="sSens" type="range" min="0.3" max="2.5" step="0.1"></label>
+  <p class="muted" id="progTxt">Strain collection: 0/8</p>
+  <button id="bReset" class="danger">RESET PROGRESS</button>
   <p class="muted">Graphics change applies after reload. Day and night cycle automatically (20 min day · 4 min night), the same for everyone online.</p>
   <button class="close">BACK</button></div></div>
 
@@ -69,7 +72,7 @@
   <p><b>SmokeRoach: De Wallen</b> — a fan game for the SmokeRoach channel (Scott, Charlotte &amp; Gunner).</p>
   <p><b>Map:</b> streets, canals, bridges, building footprints, heights and shop names from <b>© OpenStreetMap contributors</b>, available under the Open Database License (ODbL) — openstreetmap.org/copyright. Data fetched via the Overpass API.</p>
   <p><b>Engine:</b> three.js (MIT). Built with Vite. <b>Multiplayer:</b> Trystero (MIT) — peer-to-peer WebRTC, matchmaking through public Nostr relays; no game server, no accounts.</p>
-  <p><b>Art:</b> all 3D models, facades, signage and textures are original procedural creations made for this game. Shop names come from OSM; no logos or photos are used. The Gunner's Den coffeeshop, its branding and its six strains are invented for this game.</p>
+  <p><b>Art:</b> all 3D models, facades, signage and textures are original procedural creations made for this game. Shop names come from OSM. The only logo and photos used are SmokeRoach's own (logo, Scott, Charlotte &amp; Gunner), used with permission on the coffeeshop posters. The Gunner's Den, Coffeeshop Balou, Gram Master Kush and every strain name are fictional, invented for this game — a cartoon, not advice.</p>
   <p><b>Audio:</b> all music and sound effects are synthesised live in your browser (Web Audio), original.</p>
   <p><b>Fonts:</b> Monoton, Bungee, Bebas Neue, Pacifico, Work Sans — SIL Open Font License.</p>
   <p class="muted">Not affiliated with or endorsed by any business shown. Be kind, respect the locals, and don't take photos of the windows.</p>
@@ -77,9 +80,9 @@
 
 <div id="hud" class="hidden">
   <div id="obj"><div id="objT"></div><div id="objD"></div></div>
-  <div id="stats"><div id="stars"></div><div id="money">€0</div><div id="stampc">🛂 0/10</div><div id="clock">23:00</div></div>
+  <div id="stats"><div id="stars"></div><div id="money">€0</div><div id="stampc">🛂 0/10</div><div id="collc">🌿 0/8</div><div id="clock">23:00</div></div>
   <div id="timer" class="hidden"></div>
-  <canvas id="mini" width="220" height="220"></canvas>
+  <canvas id="mini" width="220" height="220"></canvas><div id="baloutag" class="hidden">COFFEESHOP<br>BALOU<small>final level · no exit</small></div>
   <div id="speedo" class="hidden"><b id="kmh">0</b><span>km/h</span><i id="vname"></i></div>
   <div id="prompt" class="hidden"></div>
   <div id="toasts"></div>
@@ -124,12 +127,25 @@
 </div>
 <div id="gwHud" class="hidden"></div><div id="buffHud" class="hidden"></div><button id="menuBtn" class="hidden">📜 MENU</button>
 <div id="menu" class="hidden"><div class="mpanel">
-  <div class="mhead"><div><small>THE GUNNER'S DEN · EST. TODAY</small><h2>MENU</h2></div><div class="wallet">Wallet <b id="menuWallet">€0</b></div></div>
+  <div class="mhead"><div><small id="menuSub">THE GUNNER'S DEN · TILL</small><h2 id="menuTitle">MENU</h2></div><div class="wallet">Wallet <b id="menuWallet">€0</b></div></div>
   <div id="menuList"></div>
   <p id="menuNote" class="muted"></p>
-  <div class="mbtns"><button id="menuClose">KEEP SITTING</button><button id="menuStand">STAND UP</button></div>
+  <div class="mbtns"><button id="menuClose">CLOSE</button></div>
   <p class="muted tiny">A cartoon game — fictional strains with silly, short on-screen effects. Not real advice.</p>
 </div></div>
+<div id="talk" class="hidden"><div class="tpanel"><div class="tname" id="talkName"></div><div class="tline" id="talkLine"></div><div class="tbtns" id="talkBtns"></div></div></div>
+<div id="lounge" class="hidden"><div class="lpanel">
+  <div class="lhead"><div><small id="loungeWhere">THE GUNNER'S DEN · UPSTAIRS</small><h3>LOUNGE CHAT</h3></div><button id="loungeX" aria-label="Close">✕</button></div>
+  <div id="loungeLog" aria-live="polite"></div>
+  <form id="loungeF" autocomplete="off"><input id="loungeIn" maxlength="120" enterkeyhint="send" placeholder="Say something…" autocomplete="off" autocapitalize="sentences"><button type="submit">SEND</button></form>
+  <div class="lfoot"><span id="loungeNote"></span><span id="loungeCount">0/120</span><button id="loungeStand" type="button">STAND UP</button></div>
+</div></div>
+<div id="complete" class="screen modal hidden"><div class="panel wide cpanel">
+  <small>ALL 8 STRAINS COLLECTED</small>
+  <h2>YOU'VE COMPLETED AMSTERDAM!</h2>
+  <div id="cDots"></div>
+  <p>Every strain in De Wallen is in your collection. One last stop: <b>Coffeeshop Balou</b> — the final level. There's no way out… but honestly, why would you want to leave?</p>
+  <button id="bBalou" class="online">ENTER COFFEESHOP BALOU ➜</button></div></div>
 <div id="jetHud" class="hidden"><b>🚀 420 JET PACK</b><span id="jetAlt">0 m</span><small id="jetHelp"><kbd>Space</kbd> up · <kbd>Shift</kbd>/<kbd>Ctrl</kbd> down · <kbd>WASD</kbd> fly</small></div>
 
 <div id="touch" class="hidden">
