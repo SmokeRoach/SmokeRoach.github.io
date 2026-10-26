@@ -6,8 +6,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>SmokeRoach: De Wallen — Open World Amsterdam</title>
 <meta name="description" content="SmokeRoach open-world Amsterdam: explore a real-map De Wallen by bike, scooter and canal boat with Scott, Charlotte and Gunner.">
-  <script type="module" crossorigin src="./assets/index-VR11_q0J.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-Tfm1fgs5.css">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#07060c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SmokeRoach">
+<link rel="apple-touch-icon" href="./icons/icon-180.png">
+  <script type="module" crossorigin src="./assets/index-BcJJ7Dy8.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-kSfFBx2z.css">
 </head>
 <body>
 <canvas id="c"></canvas>
@@ -114,6 +121,8 @@
 <button id="tapAudio" class="hidden">🔊 Tap to enable audio</button>
 <div id="peerAudio" aria-hidden="true"></div>
 <div id="buildTag"></div>
+<button id="fsBtn" class="hidden" type="button" aria-label="Full screen" title="Full screen"></button>
+<div id="fsTip" class="hidden" role="status"><b>⛶ PLAY FULL SCREEN ON IPHONE</b>Tap <span class="ios-share" aria-label="Share">Share <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M7 8l5-5 5 5M5 11v10h14V11"/></svg></span> then <b class="hl">Add to Home Screen</b>, and open SmokeRoach from your home screen. <small>Tap to close</small></div>
 <button id="updBar" class="hidden">🔄 A newer version of the game is available — tap to reload</button>
 
 <div id="netui" class="hidden">
