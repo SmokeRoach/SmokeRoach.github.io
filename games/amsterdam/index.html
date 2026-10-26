@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>SmokeRoach: De Wallen — Open World Amsterdam</title>
 <meta name="description" content="SmokeRoach open-world Amsterdam: explore a real-map De Wallen by bike, scooter and canal boat with Scott, Charlotte and Gunner.">
-  <script type="module" crossorigin src="./assets/index-CteDIhmb.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-yupbywRp.css">
+  <script type="module" crossorigin src="./assets/index-BJ_4zrmW.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CEyC8QMa.css">
 </head>
 <body>
 <canvas id="c"></canvas>
@@ -45,11 +45,12 @@
   <h2>HOW TO PLAY</h2>
   <div class="cols">
   <div><h3>On foot</h3><p><kbd>W A S D</kbd> move · <kbd>Shift</kbd> run · <kbd>Space</kbd> jump<br><kbd>Mouse</kbd> look (click to lock) · <kbd>E</kbd> / <kbd>F</kbd> ride the nearest bike, scooter, car or boat / start missions</p></div>
+  <div><h3>The Gunner's Den</h3><p>Three floors of coffeeshop by the canal — walk in, take the stairs, and press <kbd>E</kbd> next to a seat to sit down. The menu opens with six strains to spend your euros on (each gives a short, harmless buff). <kbd>Q</kbd> reopens the menu, <kbd>E</kbd> stands up. One of them is suspiciously cheap…</p></div>
   <div><h3>Driving</h3><p><kbd>W</kbd>/<kbd>S</kbd> throttle &amp; brake/reverse · <kbd>A</kbd>/<kbd>D</kbd> steer · <kbd>Space</kbd> handbrake · <kbd>H</kbd> bell/horn · <kbd>E</kbd> get off</p></div>
   <div><h3>Other</h3><p><kbd>M</kbd> map · <kbd>Tab</kbd> players · <kbd>T</kbd> chat · <kbd>C</kbd> camera reset · <kbd>Esc</kbd>/<kbd>P</kbd> pause</p></div>
   <div><h3>420 jet pack</h3><p>Get on and off a scooter 4 times and the <b>420</b> jet pack drops in front of you. Walk into it or press <kbd>E</kbd>. <kbd>Space</kbd> thrust up · <kbd>Shift</kbd>/<kbd>Ctrl</kbd> down · <kbd>W A S D</kbd> fly. Land on any rooftop and walk around up there.</p></div>
   <div><h3>Online &amp; voice</h3><p>PLAY ONLINE, pick a nickname, join the public lobby or a room code (max 8). Press <kbd>🎤</kbd> to allow your mic, then hold <kbd>V</kbd> to talk or toggle open mic. Voices are positional — players closer to you sound louder. <kbd>Tab</kbd> players list &amp; mute.</p></div>
-  <div><h3>Goals</h3><p>Find Gunner, do the Bitterballen Run, race the canals and Damrak, and collect all 10 travel stamps for your passport. Ride recklessly and the Politie will come for you — lose them to drop your heat.</p></div>
+  <div><h3>Goals</h3><p>Find Gunner, do the Bitterballen Run, race the canal and the Wallen Sprint, pick up gold coins for spending money, and collect all 10 travel stamps for your passport. The playable area is the De Wallen core — the yellow dashed line on the map. Ride recklessly and the Politie will come for you — lose them to drop your heat.</p></div>
   </div>
   <p class="muted">Touch: left stick to move, drag right side to look, buttons for jump / ride / run / bell. Online: hold the big TALK button to speak.</p>
   <button class="close">BACK</button></div></div>
@@ -68,7 +69,7 @@
   <p><b>SmokeRoach: De Wallen</b> — a fan game for the SmokeRoach channel (Scott, Charlotte &amp; Gunner).</p>
   <p><b>Map:</b> streets, canals, bridges, building footprints, heights and shop names from <b>© OpenStreetMap contributors</b>, available under the Open Database License (ODbL) — openstreetmap.org/copyright. Data fetched via the Overpass API.</p>
   <p><b>Engine:</b> three.js (MIT). Built with Vite. <b>Multiplayer:</b> Trystero (MIT) — peer-to-peer WebRTC, matchmaking through public Nostr relays; no game server, no accounts.</p>
-  <p><b>Art:</b> all 3D models, facades, signage and textures are original procedural creations made for this game. Shop names come from OSM; no logos or photos are used.</p>
+  <p><b>Art:</b> all 3D models, facades, signage and textures are original procedural creations made for this game. Shop names come from OSM; no logos or photos are used. The Gunner's Den coffeeshop, its branding and its six strains are invented for this game.</p>
   <p><b>Audio:</b> all music and sound effects are synthesised live in your browser (Web Audio), original.</p>
   <p><b>Fonts:</b> Monoton, Bungee, Bebas Neue, Pacifico, Work Sans — SIL Open Font License.</p>
   <p class="muted">Not affiliated with or endorsed by any business shown. Be kind, respect the locals, and don't take photos of the windows.</p>
@@ -121,6 +122,14 @@
   <form id="chatf" class="hidden"><input id="chatIn" maxlength="140" placeholder="Say something… (Enter to send, Esc to close)" autocomplete="off"></form>
   <button id="ttalk" class="hidden">HOLD<br>TO TALK</button>
 </div>
+<div id="gwHud" class="hidden"></div><div id="buffHud" class="hidden"></div><button id="menuBtn" class="hidden">📜 MENU</button>
+<div id="menu" class="hidden"><div class="mpanel">
+  <div class="mhead"><div><small>THE GUNNER'S DEN · EST. TODAY</small><h2>MENU</h2></div><div class="wallet">Wallet <b id="menuWallet">€0</b></div></div>
+  <div id="menuList"></div>
+  <p id="menuNote" class="muted"></p>
+  <div class="mbtns"><button id="menuClose">KEEP SITTING</button><button id="menuStand">STAND UP</button></div>
+  <p class="muted tiny">A cartoon game — fictional strains with silly, short on-screen effects. Not real advice.</p>
+</div></div>
 <div id="jetHud" class="hidden"><b>🚀 420 JET PACK</b><span id="jetAlt">0 m</span><small id="jetHelp"><kbd>Space</kbd> up · <kbd>Shift</kbd>/<kbd>Ctrl</kbd> down · <kbd>WASD</kbd> fly</small></div>
 
 <div id="touch" class="hidden">
