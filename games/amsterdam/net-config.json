@@ -1,1 +1,1 @@
-{"iceServersUrl":"https://smokeroach.metered.live/api/v1/turn/credentials?apiKey=7bf90e21ce0e082c68ceee3e9f8a0ea86486","iceServers":[]}
+{"iceServersUrl":"https://smokeroach.metered.live/api/v1/turn/credentials?apiKey=7bf90e21ce0e082c68ceee3e9f8a0ea86486","iceServers":[{"urls":["turn:free.expressturn.com:3478?transport=udp","turn:free.expressturn.com:3478?transport=tcp"],"username":"000000002108342129","credential":"f1XwNsETMP/teNUz907wSKDB1VE="}]}
