@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
 <title>SmokeRoach: De Wallen — Open World Amsterdam</title>
 <meta name="description" content="SmokeRoach open-world Amsterdam: explore a real-map De Wallen by bike, scooter and canal boat with Scott, Charlotte and Gunner.">
-  <script type="module" crossorigin src="./assets/index-8AUIJTQb.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-Bl-Ztghk.css">
+  <script type="module" crossorigin src="./assets/index-D9_M9zMF.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-yupbywRp.css">
 </head>
 <body>
 <canvas id="c"></canvas>
@@ -109,10 +109,13 @@
 
 <button id="tapAudio" class="hidden">🔊 Tap to enable audio</button>
 <div id="peerAudio" aria-hidden="true"></div>
+<div id="buildTag"></div>
+<button id="updBar" class="hidden">🔄 A newer version of the game is available — tap to reload</button>
 
 <div id="netui" class="hidden">
   <div id="netbar"><span id="netst">🌐 offline</span>
-    <button id="bMic" title="Voice on/off (allow microphone)">🎤</button><button id="bOpen" title="Open mic toggle">🎙 OPEN</button><button id="bMuteAll" title="Mute everyone">🔈</button><button id="bPlayers" title="Players (Tab)">👥</button><button id="bChat" title="Chat (T)">💬</button></div>
+    <button id="bMic" title="Voice on/off (allow microphone)">🎤</button><button id="bOpen" title="Open mic toggle">🎙 OPEN</button><button id="bMuteAll" title="Mute everyone">🔈</button><button id="bPlayers" title="Players (Tab)">👥</button><button id="bChat" title="Chat (T)">💬</button><button id="bDiag" title="Connection status">📶</button></div>
+  <div id="ndiag" class="hidden"></div>
   <div id="plist" class="hidden"></div>
   <div id="chatlog"></div>
   <form id="chatf" class="hidden"><input id="chatIn" maxlength="140" placeholder="Say something… (Enter to send, Esc to close)" autocomplete="off"></form>

@@ -1,0 +1,5 @@
+{
+  "_help": "Optional TURN relay config, read at runtime (no rebuild needed). Put short-lived-credential endpoint in iceServersUrl (Metered: https://<app>.metered.live/api/v1/turn/credentials?apiKey=<key>), or static servers in iceServers.",
+  "iceServersUrl": "",
+  "iceServers": []
+}
