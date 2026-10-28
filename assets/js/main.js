@@ -116,9 +116,12 @@
   /* ---------- merch ---------- */
   get("data/merch.json").then(function (d) {
     if (d.shopUrl) $("#shop-all").href = safeUrl(d.shopUrl);
+    var lastGroup = null, hasGroups = (d.items || []).some(function (m) { return m.group; });
     $("#merch-list").innerHTML = (d.items || []).map(function (m) {
       var url = esc(safeUrl(m.url));
-      return '<article class="card mcard reveal">' + (m.isNew ? '<span class="mnew">New</span>' : "") +
+      var g = m.group || (hasGroups ? "The originals" : null), head = "";
+      if (g !== lastGroup) { lastGroup = g; if (g) head = '<h3 class="mgroup">' + esc(g) + '</h3>'; }
+      return head + '<article class="card mcard reveal">' + (m.isNew ? '<span class="mnew">New</span>' : "") +
         '<a class="mimg" href="' + url + '" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img loading="lazy" width="800" height="800" src="' + esc(m.image) + '" alt="' + esc(m.name) + '"></a>' +
         '<div class="minfo"><h3>' + esc(m.name) + '</h3><p>' + esc(m.blurb) + '</p>' +
         '<div class="mrow">' + (m.price ? '<div class="mprice">' + esc(m.price) + '</div>' : "") + '<a class="btn btn-green btn-sm" href="' + url + '" target="_blank" rel="noopener" aria-label="' + esc((m.cta || "Buy now") + ": " + m.name) + '">' + esc(m.cta || "Buy now") + ' ↗</a></div></div></article>';

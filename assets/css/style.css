@@ -388,3 +388,5 @@ footer::before{content:"";position:absolute;left:0;right:0;top:-1px;height:3px;b
 .game-card h3{margin:0;font-family:var(--display);font-weight:400;font-size:clamp(24px,2.6vw,32px);line-height:1.05;text-transform:uppercase}
 .game-card p{margin:0;color:var(--muted);line-height:1.55;flex:1}
 @media (max-width:760px){.games-grid{grid-template-columns:1fr}}
+
+.mgroup{grid-column:1/-1;margin:14px 0 0;font-family:var(--display);font-size:26px;letter-spacing:.5px;color:var(--gold)}.mgroup:first-child{margin-top:0}

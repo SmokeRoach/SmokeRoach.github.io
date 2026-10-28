@@ -1,7 +1,117 @@
 {
-  "_help": "Cards for the 'Merch' section. Add a product: name, blurb, price (as shown on Teemill), image (put it in assets/merch/), url (the Teemill product page), cta. Newest first.",
+  "_help": "Cards for the 'Merch' section. Add a product: name, blurb, price (as shown on Teemill), image (put it in assets/merch/), url (the Teemill product page), cta. Newest first. Items can have a 'group' (heading shown above the first item of each group). Scouse Edition items whose url is just the shop have no live Teemill page yet: set url to https://smokeroach.teemill.com/product/<teemillSlug>/ and cta to 'Buy now' once live.",
   "shopUrl": "https://smokeroach.teemill.com/",
   "items": [
+    {
+      "name": "TA-RA T-Shirt",
+      "group": "Scouse Edition",
+      "blurb": "Liverpool for goodbye, and we're off. The crew heading out with the bags.",
+      "price": "£25",
+      "image": "assets/merch/scouse-ta-ra-tee.webp?v=s4",
+      "url": "https://smokeroach.teemill.com/",
+      "teemillSlug": "ta-ra-t-shirt",
+      "cta": "See the shop",
+      "isNew": true
+    },
+    {
+      "name": "Boss Tour T-Shirt",
+      "group": "Scouse Edition",
+      "blurb": "Boss is Scouse for brilliant. Budget travel from Liverpool.",
+      "price": "£25",
+      "image": "assets/merch/scouse-boss-tour-tee.webp?v=s4",
+      "url": "https://smokeroach.teemill.com/",
+      "teemillSlug": "boss-tour-t-shirt",
+      "cta": "See the shop",
+      "isNew": true
+    },
+    {
+      "name": "Made Up T-Shirt",
+      "group": "Scouse Edition",
+      "blurb": "Made up (adj.): Scouse for delighted. Usually after finding a cheap flight.",
+      "price": "£25",
+      "image": "assets/merch/scouse-made-up-tee.webp?v=s4",
+      "url": "https://smokeroach.teemill.com/",
+      "teemillSlug": "made-up-t-shirt",
+      "cta": "See the shop",
+      "isNew": true
+    },
+    {
+      "name": "Skint But Sound T-Shirt",
+      "group": "Scouse Edition",
+      "blurb": "Broke, not boring. Skint means no money, sound means good company.",
+      "price": "£25",
+      "image": "assets/merch/scouse-skint-but-sound-tee.webp?v=s4",
+      "url": "https://smokeroach.teemill.com/",
+      "teemillSlug": "skint-but-sound-t-shirt",
+      "cta": "See the shop",
+      "isNew": true
+    },
+    {
+      "name": "Our Kid T-Shirt",
+      "group": "Scouse Edition",
+      "blurb": "Scouse for your brother, your mate, your travel partner.",
+      "price": "£25",
+      "image": "assets/merch/scouse-our-kid-tee.webp?v=s4",
+      "url": "https://smokeroach.teemill.com/",
+      "teemillSlug": "our-kid-t-shirt",
+      "cta": "See the shop",
+      "isNew": true
+    },
+    {
+      "name": "Me Mam Thinks We're Mad T-Shirt",
+      "group": "Scouse Edition",
+      "blurb": "Probably right. The crew in gold over bold lettering.",
+      "price": "£25",
+      "image": "assets/merch/scouse-me-mam-thinks-were-mad-tee.webp?v=s4",
+      "url": "https://smokeroach.teemill.com/",
+      "teemillSlug": "me-mam-thinks-were-mad-t-shirt",
+      "cta": "See the shop",
+      "isNew": true
+    },
+    {
+      "name": "Is Right La T-Shirt",
+      "group": "Scouse Edition",
+      "blurb": "Scouse for you're absolutely right.",
+      "price": "£25",
+      "image": "assets/merch/scouse-is-right-la-tee.webp?v=s4",
+      "url": "https://smokeroach.teemill.com/",
+      "teemillSlug": "is-right-la-t-shirt",
+      "cta": "See the shop",
+      "isNew": true
+    },
+    {
+      "name": "Scran Abroad T-Shirt",
+      "group": "Scouse Edition",
+      "blurb": "Scran is Scouse for food, the real reason we travel.",
+      "price": "£25",
+      "image": "assets/merch/scouse-scran-abroad-tee.webp?v=s4",
+      "url": "https://smokeroach.teemill.com/",
+      "teemillSlug": "scran-abroad-t-shirt",
+      "cta": "See the shop",
+      "isNew": true
+    },
+    {
+      "name": "Pack Yer Bags La T-Shirt",
+      "group": "Scouse Edition",
+      "blurb": "Pack yer bags, la, we're goin' abroad.",
+      "price": "£25",
+      "image": "assets/merch/scouse-pack-yer-bags-la-tee.webp?v=s4",
+      "url": "https://smokeroach.teemill.com/",
+      "teemillSlug": "pack-yer-bags-la-t-shirt",
+      "cta": "See the shop",
+      "isNew": true
+    },
+    {
+      "name": "Dead Cheap Dead Good T-Shirt",
+      "group": "Scouse Edition",
+      "blurb": "Dead means very in Scouse. The SmokeRoach way to travel.",
+      "price": "£25",
+      "image": "assets/merch/scouse-dead-cheap-dead-good-tee.webp?v=s4",
+      "url": "https://smokeroach.teemill.com/",
+      "teemillSlug": "dead-cheap-dead-good-t-shirt",
+      "cta": "See the shop",
+      "isNew": true
+    },
     {
       "name": "SmokeRoach Crew T-Shirt",
       "blurb": "Scott, Charlotte and Gunner on the road: the original budget travel crew, est. Liverpool.",
