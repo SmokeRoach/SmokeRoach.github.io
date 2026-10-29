@@ -7,3 +7,11 @@ man_punk.glb    = "Punk" (Quaternius, Poly Pizza BTALZymknF, CC0 1.0) - rival la
 Window tenants + street dancer: baked from woman_blonde.glb, recoloured into swimwear.
 Recoloured / restyled in-game (Scott: bald + beard + cap; Charlotte: long blonde hair).
 dog_shiba.glb   = "Shiba Inu" (Quaternius, Poly Pizza y4wdQpg767, CC0 1.0) - Gunner (recoloured champagne-beige, ears relaxed into natural floppy ears, head/chest broadened)
+
+Realistic tier (Stage 9, default on medium+ quality): Microsoft Rocketbox Avatar Library, MIT License,
+Copyright (c) 2020 Microsoft Corporation - https://github.com/microsoft/Microsoft-Rocketbox
+rb_scott.glb     = Male_Adult_11 (head texture repainted: shaved scalp + ginger-brown beard; shirt tint mask rb_scott_shirt.png)
+rb_charlotte.glb = Female_Party_01 (long blonde hair cards)
+rb_m02/m06/m16, rb_f05/f13/f17/fp02 = Male_Adult_02/06/16, Female_Adult_05/13/17, Female_Party_02 (1K textures)
+Animations: Rocketbox motextr_static / motextr_xy (m_/f_ idle_neutral_01, walk_neutral, run_neutral, wave_01, dancing_silly), MIT.
+Converted FBX -> glTF (WebP textures) with Blender 4.2. The Quaternius models above remain the Low tier.
