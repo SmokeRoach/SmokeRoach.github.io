@@ -1,4 +1,8 @@
 Character models: Quaternius (https://quaternius.com) via Poly Pizza — licence CC0 1.0 (public domain).
 man_casual.glb   = "Casual Character"  https://poly.pizza/m/kZ3DmIoGip  (CC0 1.0)
 woman_blonde.glb = "Animated Woman"    https://poly.pizza/m/qJ2gsTUBHL  (CC0 1.0)
+man_business.glb = "Business Man" (Quaternius, Poly Pizza JFrLIKqvCH, CC0 1.0) - the ammo dealer
+man_punk.glb    = "Punk" (Quaternius, Poly Pizza BTALZymknF, CC0 1.0) - rival landlord crew
+(animations stripped; they share the CharacterArmature clips from man_casual.glb)
+Window tenants + street dancer: baked from woman_blonde.glb, recoloured into swimwear.
 Recoloured / restyled in-game (Scott: bald + beard + cap; Charlotte: long blonde hair).
