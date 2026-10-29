@@ -6,3 +6,4 @@ man_punk.glb    = "Punk" (Quaternius, Poly Pizza BTALZymknF, CC0 1.0) - rival la
 (animations stripped; they share the CharacterArmature clips from man_casual.glb)
 Window tenants + street dancer: baked from woman_blonde.glb, recoloured into swimwear.
 Recoloured / restyled in-game (Scott: bald + beard + cap; Charlotte: long blonde hair).
+dog_shiba.glb   = "Shiba Inu" (Quaternius, Poly Pizza y4wdQpg767, CC0 1.0) - Gunner (recoloured champagne-beige, ears relaxed into natural floppy ears, head/chest broadened)
