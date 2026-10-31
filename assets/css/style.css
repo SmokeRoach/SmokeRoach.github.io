@@ -163,7 +163,7 @@ section{padding:70px 0}
 .social b{display:block;font-size:16px}
 .social small{display:block;color:var(--muted);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .social>span:last-child{min-width:0}
-.ic-youtube{background:#ff0033}.ic-tiktok{background:#000;box-shadow:inset 2px 2px 0 #25f4ee,inset -2px -2px 0 #fe2c55}.ic-link{background:linear-gradient(135deg,var(--pink),var(--orange))}.ic-mail{background:linear-gradient(135deg,var(--cyan),#5b5bff)}
+.ic-youtube{background:#ff0033}.ic-tiktok{background:#000;box-shadow:inset 2px 2px 0 #25f4ee,inset -2px -2px 0 #fe2c55}.ic-x{background:#000;box-shadow:inset 0 0 0 2px #333}.ic-link{background:linear-gradient(135deg,var(--pink),var(--orange))}.ic-mail{background:linear-gradient(135deg,var(--cyan),#5b5bff)}
 
 /* about */
 .about .card{padding:28px 30px;display:grid;grid-template-columns:1fr 1.4fr;gap:30px}
