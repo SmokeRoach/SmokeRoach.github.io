@@ -8,6 +8,7 @@ No API key needed. Only standard-library Python 3.
   (YouTube's feed holds the newest ~15 uploads).
 - Marks Shorts (a video is a Short if youtube.com/shorts/<id> answers 200 instead of redirecting).
 - Skips any video id listed in EXCLUDE below (handy for keeping the hub on-brand).
+- Then runs scripts/render_static.py, which writes the same videos into index.html as plain HTML.
 """
 import json, os, sys, urllib.request, urllib.error
 import xml.etree.ElementTree as ET
@@ -66,6 +67,10 @@ def main():
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
     print(f"Wrote {len(videos)} videos ({sum(not v['short'] for v in videos)} long-form) to {os.path.normpath(OUT)}")
+    # Also write the videos and links into index.html as plain HTML (for Google and no-JS visitors).
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import render_static
+    render_static.main()
 
 
 if __name__ == "__main__":
