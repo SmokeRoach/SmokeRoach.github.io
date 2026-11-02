@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.github.smokeroach.games",
+      "sha256_cert_fingerprints": [
+        "2F:54:66:93:09:D3:9E:4D:56:2F:A7:9C:D8:D9:58:F8:8F:99:FD:C3:2A:78:57:E5:08:C9:33:DF:56:48:9F:1F"
+      ]
+    }
+  }
+]

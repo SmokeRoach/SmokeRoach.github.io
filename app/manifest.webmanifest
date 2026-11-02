@@ -1,0 +1,20 @@
+{
+  "id": "/app/",
+  "name": "SmokeRoach Games",
+  "short_name": "SmokeRoach",
+  "description": "Free SmokeRoach games starring Scott, Charlotte and Gunner: the £99 Challenge runner and Scooter Surfers.",
+  "start_url": "/app/?app=1",
+  "scope": "/",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#0c0320",
+  "theme_color": "#0c0320",
+  "lang": "en-GB",
+  "categories": ["games", "entertainment"],
+  "icons": [
+    { "src": "/app/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/app/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/app/icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
