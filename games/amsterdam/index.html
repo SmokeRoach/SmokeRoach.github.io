@@ -29,8 +29,8 @@
 {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://smokeroach.github.io/#org","name":"SmokeRoach","alternateName":"Smoke Roach","url":"https://smokeroach.github.io/","logo":"https://smokeroach.github.io/assets/img/icon-512.png","description":"SmokeRoach is a budget travel YouTube channel from Liverpool, UK: Scott, Charlotte and their dog Gunner doing travel price challenges. This is the official SmokeRoach website.","email":"smokeroach0151@gmail.com","sameAs":["https://www.youtube.com/@smoke_roach","https://www.instagram.com/smoke_roach/","https://x.com/blendyfella","https://www.tiktok.com/@smoke_roach","https://lnk.bio/smokeroach"]},{"@type":"WebSite","@id":"https://smokeroach.github.io/#website","name":"SmokeRoach","alternateName":"Smoke Roach","url":"https://smokeroach.github.io/","inLanguage":"en-GB","publisher":{"@id":"https://smokeroach.github.io/#org"}},{"@type":"VideoGame","name":"SmokeRoach Game: Amsterdam Open World","url":"https://smokeroach.github.io/games/amsterdam/","image":"https://smokeroach.github.io/assets/img/games/de-wallen-og.jpg","screenshot":["https://smokeroach.github.io/assets/img/games/de-wallen-card.jpg"],"description":"A free open-world Amsterdam game from SmokeRoach: explore real De Wallen streets by bike, scooter and canal boat, solo or online with up to 8 players and voice chat.","genre":["Open world","Adventure"],"playMode":["SinglePlayer","MultiPlayer"],"gamePlatform":"Web browser","applicationCategory":"Game","operatingSystem":"Any (web browser)","inLanguage":"en-GB","author":{"@id":"https://smokeroach.github.io/#org"},"publisher":{"@id":"https://smokeroach.github.io/#org"},"offers":{"@type":"Offer","price":"0","priceCurrency":"GBP","availability":"https://schema.org/InStock"}}]}
 </script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="1B5xNE8ukLY01BvNsoYk8g" async></script>
-  <script type="module" crossorigin src="./assets/index-BJgOedJg.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BX2PBARm.css">
+  <script type="module" crossorigin src="./assets/index-CHpYokBy.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-D2qVuzoT.css">
 </head>
 <body>
 <noscript><style>.ns-seo{max-width:720px;margin:40px auto;padding:22px;color:#fff;background:#120a24;border-radius:14px;font:16px/1.55 system-ui,sans-serif;position:relative;z-index:99}.ns-seo a{color:#7cff3a}.ns-seo h1,.ns-seo h2{margin:0 0 10px}</style><div class="ns-seo"><h2>SmokeRoach Game: Amsterdam Open World</h2><p>A free open-world Amsterdam game from SmokeRoach, the Liverpool budget travel channel. Explore the streets and canals of the old centre, built from real OpenStreetMap data, as Scott, Charlotte or Gunner. Get about by bike, scooter or canal boat, personalise your character, and play solo or press Play Online to explore with up to 8 players on voice chat.</p><p>It runs in your web browser on phones, tablets and computers. No download and no sign-up.</p><p><a href="/games/">All SmokeRoach games</a> · <a href="/">smokeroach.github.io, the official SmokeRoach website</a> · <a href="https://www.youtube.com/@smoke_roach">SmokeRoach on YouTube</a></p><p>This game needs JavaScript switched on to play.</p></div></noscript>
@@ -164,33 +164,37 @@
 <button id="updBar" class="hidden">🔄 A newer version of the game is available — tap to reload</button>
 <div id="phoneWrap" class="hidden" role="dialog" aria-label="Phone">
   <div id="phone">
-    <div class="ph-notch"></div>
-    <div class="ph-head">SMOKEROACH OS<small>LIGHT · DE WALLEN</small></div>
-    <div class="ph-body">
-      <h3>Weather</h3>
-      <div class="ph-row" id="phWeather">
-        <button data-w="clear" class="on">Clear</button>
-        <button data-w="rain">Rain</button>
-        <button data-w="fog">Fog</button>
+    <div class="ph-ear"></div>
+    <div class="ph-brand">SMOKEROACH PHONE</div>
+    <div class="ph-screen">
+      <div class="ph-status"><span class="ph-sig">▂▄▆</span><span id="phClock">13:00</span><span class="ph-bat">▮▮▮</span></div>
+      <div class="ph-title">Weather &amp; filters</div>
+      <div class="ph-body">
+        <div class="ph-sec">Weather</div>
+        <div class="ph-row" id="phWeather">
+          <button data-w="clear" class="on"><i>☀</i><b>Clear weather</b><small>Stop rain and clear the fog</small></button>
+          <button data-w="rain"><i>☂</i><b>Rainy Dam</b><small>Rain, wet cobbles and puddles</small></button>
+          <button data-w="fog"><i>≋</i><b>Canal fog</b><small>Thick mist over the grachten</small></button>
+        </div>
+        <div class="ph-sec">Time of day</div>
+        <div class="ph-row" id="phTime">
+          <button data-h="auto" class="on"><i>◷</i><b>Live cycle</b><small>Same clock as everyone online</small></button>
+          <button data-h="7"><i>◒</i><b>Dawn</b><small>07:00, low sun</small></button>
+          <button data-h="13"><i>◉</i><b>Day</b><small>13:00, bright daylight</small></button>
+          <button data-h="19"><i>◓</i><b>Dusk</b><small>19:00, golden hour</small></button>
+          <button data-h="22"><i>☾</i><b>Night</b><small>22:00, streetlights on</small></button>
+        </div>
+        <input id="phHour" type="range" min="0" max="23.9" step="0.1" value="13" aria-label="Hour">
+        <div class="ph-time"><span>00:00</span><span id="phHourLab">13:00</span><span>23:59</span></div>
+        <div class="ph-sec">Filters</div>
+        <div class="ph-row" id="phFilter">
+          <button data-f="none" class="on"><i>▣</i><b>Normal picture</b><small>Turn picture filters off</small></button>
+          <button data-f="psx"><i>▦</i><b>PS1-style filter</b><small>Lower-resolution colour and wobble</small></button>
+        </div>
       </div>
-      <h3>Time of day</h3>
-      <div class="ph-row" id="phTime">
-        <button data-h="auto" class="on">Live cycle</button>
-        <button data-h="7">Dawn</button>
-        <button data-h="13">Day</button>
-        <button data-h="19">Dusk</button>
-        <button data-h="22">Night</button>
-      </div>
-      <input id="phHour" type="range" min="0" max="23.9" step="0.1" value="13">
-      <div class="ph-time"><span>00:00</span><span id="phHourLab">13:00</span><span>23:59</span></div>
-      <h3>Filters</h3>
-      <div class="ph-row" id="phFilter">
-        <button data-f="none" class="on">None</button>
-        <button data-f="psx">Retro PSX</button>
-      </div>
-      <button class="ph-close" id="phClose" type="button">Close</button>
-      <div class="ph-foot">MADE IN LIVERPOOL · SMOKEROACH</div>
+      <div class="ph-soft"><span>Select</span><button class="ph-close" id="phClose" type="button">Back</button></div>
     </div>
+    <div class="ph-keys"><i></i><b>🥦</b><i></i></div>
   </div>
 </div>
 
