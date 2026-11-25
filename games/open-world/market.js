@@ -32,7 +32,7 @@ function addMsg(m) { const d = document.createElement('div'); d.className = 'msg
 $('tSign').onclick = () => { mode = 'sign'; $('tSign').classList.add('on'); $('tLog').classList.remove('on'); $('aGo').textContent = 'Create account'; $('p').autocomplete = 'new-password'; };
 $('tLog').onclick = () => { mode = 'log'; $('tLog').classList.add('on'); $('tSign').classList.remove('on'); $('aGo').textContent = 'Log in'; $('p').autocomplete = 'current-password'; };
 $('aGo').onclick = async () => { $('aerr').textContent = ''; $('aGo').disabled = true; try {
-    if (mode === 'sign') { await N.signUp($('u').value, $('p').value); await N.importGuest(J('sr_ow_inv', {})).catch(() => { }); await N.pushSave(N.localSnap(), 0); }
+    if (mode === 'sign') { await N.signUp($('u').value, $('p').value); await N.importGuest(J('sr_ow_inv', {})).catch(() => { }); const lm = +J('sra_money', 20) || 0; await N.pushSave(N.localSnap(), Math.max(0, Math.min(lm - 20, 500))); N.applyToLocal(await N.pullSave()); }
     else { await N.logIn($('u').value, $('p').value); const st = await N.pullSave(); if (st?.pos || st?.sra) N.applyToLocal(st); else { await N.pushSave(N.localSnap(), 0); N.applyToLocal(await N.pullSave()); } }
     $('p').value = ''; renderAuth(); await renderInv(); renderTrades();
   } catch (e) { $('aerr').textContent = e.message; } $('aGo').disabled = false; };
