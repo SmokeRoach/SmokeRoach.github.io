@@ -30,10 +30,13 @@ export function localSnap() { const o = {}; for (const k of Object.keys(localSto
 export const claimLoot = spot => rpc('claim_loot', { p_spot: spot });
 export const importGuest = items => rpc('import_guest', { p_items: items || {} });
 export async function inventory() { await init(); if (!signedIn()) return null; const { data } = await sb.from('inventory').select('item_id,qty').eq('user_id', user.id).gt('qty', 0); return Object.fromEntries((data || []).map(r => [r.item_id, r.qty])); }
-export const createTrade = (item, wantCash, wantItem) => rpc('create_trade', { p_item: item, p_want_cash: wantCash || null, p_want_item: wantItem || null });
+export const createTrade = (item, price) => rpc('create_trade', { p_item: item, p_want_cash: Math.round(price), p_want_item: null }); // list an item for sale (escrowed)
 export const cancelTrade = id => rpc('cancel_trade', { p_id: id });
-export async function acceptTrade(id) { const r = await rpc('accept_trade', { p_id: id }); if (profile && r?.cash != null) profile.cash = r.cash; return r; }
-export async function trades() { await init(); if (!online) return []; const { data } = await sb.from('trades').select('*').or('status.eq.open,closed_at.gt.' + new Date(Date.now() - 864e5).toISOString()).order('created_at', { ascending: false }).limit(60); return data || []; }
+export async function acceptTrade(id) { const r = await rpc('accept_trade', { p_id: id }); if (profile && r?.cash != null) profile.cash = r.cash; return r; } // buy-it-now, atomic on the server
+export const buy = acceptTrade;
+export async function listings() { await init(); if (!online) return []; const { data, error } = await sb.from('trades').select('id,seller,seller_name,item_id,want_cash,created_at').eq('status', 'open').not('want_cash', 'is', null).order('created_at', { ascending: false }).limit(300); if (error) throw new Error(nice(error)); return data || []; }
+export async function myListings() { await init(); if (!signedIn()) return []; const { data } = await sb.from('trades').select('*').eq('seller', user.id).order('created_at', { ascending: false }).limit(50); return data || []; }
+export const trades = listings;
 // --- chat
 export async function chatHistory() { await init(); if (!online) return []; const { data } = await sb.from('chat').select('id,username,body,created_at').order('created_at', { ascending: false }).limit(60); return (data || []).reverse(); }
 export async function chatSend(body) { await init(); if (!signedIn()) throw new Error('Sign in to chat.'); const { error } = await sb.from('chat').insert({ body: String(body).slice(0, 240), username: profile?.username || '?' }); if (error) throw new Error(nice(error)); }

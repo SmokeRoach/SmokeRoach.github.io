@@ -32,6 +32,13 @@ label{font-size:13px;color:var(--mut);display:block;margin:8px 0 4px}.row{displa
 .who{display:flex;align-items:center;gap:8px;justify-content:space-between}
 footer{margin:26px 0 10px;color:var(--mut);font-size:13px;text-align:center}
 @media (max-width:980px){.grid{grid-template-columns:1fr}.hero{grid-template-columns:1fr}#chatLog{height:280px}}
+.shopgrid{display:grid;grid-template-columns:1fr 340px;gap:16px;align-items:start}.side{display:grid;gap:16px}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:8px;margin-bottom:6px}
+.shop{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
+.lst{background:#0e1118;border:2px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:4px}.lst .ic{font-size:44px;line-height:1.1}.lst h3{margin:0;font-size:16px}.lst .pr{font:26px Anton,Impact,sans-serif;color:var(--gold)}.lst .by{font-size:13px;color:var(--mut)}.lst .by b{color:var(--g)}.lst .btn{margin-top:6px}
+.mrow{display:flex;align-items:center;gap:8px;background:#0e1118;border-radius:10px;padding:7px 9px;margin-bottom:6px;font-size:14px}.mrow .ic{font-size:22px}.mrow .grow{flex:1}
+#chatLog{height:260px}
+@media (max-width:980px){.shopgrid{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.filters #fq{grid-column:1/-1}.shop{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
 </style>
 </head>
 <body>
@@ -41,49 +48,61 @@ footer{margin:26px 0 10px;color:var(--mut);font-size:13px;text-align:center}
   <div>
     <span class="kicker">Free · in your browser · phones too</span>
     <h1>SmokeRoach <span class="hl">Open World</span></h1>
-    <p>Roam De Wallen in Amsterdam with Scott, Charlotte and Gunner, then jump on the SmokeBus to Holt Road in Liverpool. Find souvenirs at the <b>Oude Kerk</b> and the <b>big shop by Kensington</b>, trade them here, and carry on exactly where you left off.</p>
+    <p>Roam De Wallen in Amsterdam with Scott, Charlotte and Gunner, then jump on the SmokeBus to Holt Road in Liverpool. Find souvenirs at the <b>Oude Kerk</b> and the <b>big shop by Kensington</b>, sell them in the Marketplace, and carry on exactly where you left off.</p>
     <div class="row" style="flex-wrap:wrap;margin-top:12px"><a id="play" class="btn big" href="../amsterdam/">▶ PLAY</a><button id="newgame" class="btn ghost">🆕 New game</button></div>
     <p id="where" class="mut" style="margin-top:8px"></p>
   </div>
   <img src="/assets/img/games/de-wallen-card.jpg?v=20261028" alt="Scott, Charlotte and Gunner on a neon canal bridge in Amsterdam at night" width="1200" height="630">
 </section>
 <h2>🏪 Marketplace</h2>
-<div class="grid">
-  <div class="card" id="acct">
-    <div id="out">
-      <div class="tabs"><button id="tSign" class="on">Sign up</button><button id="tLog">Log in</button></div>
-      <label for="u">Username</label><input id="u" autocomplete="username" maxlength="16" placeholder="3-16 letters, numbers or _">
-      <label for="p">Password</label><input id="p" type="password" autocomplete="new-password" placeholder="at least 6 characters">
-      <div class="err" id="aerr"></div>
-      <button id="aGo" class="btn" style="width:100%">Create account</button>
-      <p class="mut" id="amode">Your account saves your spot, money and items, so you pop back up where you were on any device. Or just press Play as a guest (saves on this device).</p>
-    </div>
-    <div id="in" hidden>
-      <div class="who"><div><div class="mut">Signed in as</div><b id="uname" style="font-size:20px"></b></div><button id="logout" class="btn ghost sm">Log out</button></div>
-      <p class="mut" style="margin:10px 0 0">Wallet: <b id="cash" style="color:var(--gold)"></b> · saved spot: <span id="spot"></span></p>
-    </div>
-    <hr style="border:0;border-top:1px solid var(--line);margin:14px 0">
-    <h2 style="font-size:20px">🎒 Your items</h2>
-    <div id="inv" class="inv"></div>
-    <p class="mut" id="invnote"></p>
-  </div>
+<p class="mut" style="margin-top:-4px">Players put the items they find up for sale. Buy anything straight away with your in-game money.</p>
+<div class="shopgrid">
   <div class="card">
-    <h2>🔁 Trades</h2>
-    <div id="sell">
-      <div class="row"><select id="sItem"></select></div>
-      <div class="row" style="margin-top:8px"><select id="sKind" style="width:42%"><option value="cash">for money £</option><option value="item">for an item</option></select><input id="sCash" type="number" min="1" max="100000" value="10" style="width:58%"><select id="sWant" style="width:58%;display:none"></select></div>
-      <button id="sGo" class="btn gold" style="width:100%;margin-top:8px">List it</button>
+    <div class="filters">
+      <input id="fq" placeholder="🔎 Search items or sellers">
+      <select id="fr"><option value="">All rarities</option><option value="common">Common</option><option value="uncommon">Uncommon</option><option value="rare">Rare</option><option value="epic">Epic</option><option value="legendary">Legendary</option></select>
+      <select id="fa"><option value="">All types</option><option value="souvenir">🎁 Souvenirs</option><option value="merch">🧢 Merch</option><option value="rolling">🌿 Rolling kit</option><option value="weapon">🔫 Weapons</option><option value="vehicle">🚗 Vehicles</option></select>
+      <select id="fs"><option value="new">Newest first</option><option value="plo">Price: low to high</option><option value="phi">Price: high to low</option><option value="rar">Rarest first</option></select>
+    </div>
+    <div class="err" id="berr"></div>
+    <div id="shop" class="shop"></div>
+  </div>
+  <div class="side">
+    <div class="card" id="acct">
+      <div id="out">
+        <div class="tabs"><button id="tSign" class="on">Sign up</button><button id="tLog">Log in</button></div>
+        <label for="u">Username</label><input id="u" autocomplete="username" maxlength="16" placeholder="3-16 letters, numbers or _">
+        <label for="p">Password</label><input id="p" type="password" autocomplete="new-password" placeholder="at least 6 characters">
+        <div class="err" id="aerr"></div>
+        <button id="aGo" class="btn" style="width:100%">Create account</button>
+        <p class="mut" id="amode">Your account saves your spot, money and items, so you pop back up where you were on any device. Or just press Play as a guest (saves on this device).</p>
+      </div>
+      <div id="in" hidden>
+        <div class="who"><div><div class="mut">Signed in as</div><b id="uname" style="font-size:20px"></b></div><button id="logout" class="btn ghost sm">Log out</button></div>
+        <p class="mut" style="margin:10px 0 0">Wallet: <b id="cash" style="color:var(--gold)"></b> · saved spot: <span id="spot"></span></p>
+      </div>
+    </div>
+    <div class="card">
+      <h2 style="font-size:20px">💷 Sell an item</h2>
+      <select id="sItem"></select>
+      <div class="row" style="margin-top:8px"><span style="font-weight:800">£</span><input id="sCash" type="number" min="1" max="100000" value="10"><button id="sGo" class="btn gold">Put it up</button></div>
       <div class="err" id="terr"></div>
+      <h2 style="font-size:20px;margin-top:6px">📋 My listings</h2>
+      <div id="mine"></div>
     </div>
-    <div id="tlist"></div>
+    <div class="card">
+      <h2 style="font-size:20px">🎒 Your items</h2>
+      <div id="inv" class="inv"></div>
+      <p class="mut" id="invnote"></p>
+    </div>
   </div>
-  <div class="card">
-    <h2>💬 Chat</h2>
-    <div id="chatLog"></div>
-    <form id="cf" class="row" style="margin-top:8px"><input id="cmsg" maxlength="240" placeholder="Say something…" autocomplete="off"><button class="btn" id="csend">Send</button></form>
-    <div class="err" id="cerr"></div>
-    <p class="mut" style="font-size:12px">Be sound. No abuse, no spam, no personal info. Messages are 240 characters max.</p>
-  </div>
+</div>
+<div class="card" style="margin-top:16px">
+  <h2>💬 Chat</h2>
+  <div id="chatLog"></div>
+  <form id="cf" class="row" style="margin-top:8px"><input id="cmsg" maxlength="240" placeholder="Say something…" autocomplete="off"><button class="btn" id="csend">Send</button></form>
+  <div class="err" id="cerr"></div>
+  <p class="mut" style="font-size:12px">Be sound. No abuse, no spam, no personal info. Messages are 240 characters max.</p>
 </div>
 <footer>SmokeRoach Open World · by Scott, Charlotte and Gunner · <a href="/">smokeroach.github.io</a></footer>
 </div>
